@@ -1,5 +1,5 @@
-export focusault class Musician {
-  constructor(name, rock, hype, focus, exp, mp, lvl, inv) {
+export default class Musician {
+  constructor(name, rock, hype, focus, exp, mp, lvl, inv, money, bandmates, player) {
     this.name = name;
     this.rock = rock;
     //hype = attack
@@ -11,7 +11,10 @@ export focusault class Musician {
     this.mp = mp;
     this.lvl = lvl;
     this.inv = inv;
-    this.enemy = enemy;
+    this.money = money;
+    this.bandmates = bandmates;
+    //player = boolean for true/false
+    this.player = player;
   }
 
   attack(enemy, location) {
@@ -25,7 +28,6 @@ export focusault class Musician {
       this.hype += 1;
       this.focus += 1;
       this.mp += 1;
-      this.hp += 2;
       this.exp = 0;
       return true;
     } else {
@@ -33,45 +35,24 @@ export focusault class Musician {
     }
   }
 
-  playerDeathCheck() {
-    if (this.hp <= 0) {
+  playerBombCheck() {
+    if (this.rock <= -10) {
       delete this.name;
       return true
     } else {
       return false
     }
   }
-}
-
-export class Boss {
-  constructor(myEnemy) {
-    this.myEnemy = myEnemy
-    this.myStats = []
-    this.myIndexLoc = 0
-    this.myDojo = ""
-  }
 
   checkEnemy(myEnemy) {
     switch (myEnemy) {
-      case "Wimp Lo":
-        this.myStats = [10, 10, 40]
-        this.myDojo = "Face To Foot Style"
+      case "Garage Friend":
+        let garageFriend = new Musician;
         break;
-      case "Axel Kicker":
-        this.myStats = [20, 20, 50]
-        this.myDojo = "Right Leg Gym"
-        break;
-      case "Handy Mann":
-        this.myStats = [30, 20, 60]
-        this.myDojo = "Custodi-gym"
-        break;
-      case "Both-Legs Jim":
-        this.myStats = [60, 30, 70]
-        this.myDojo = "Foot to Face Style"
-        break;
-      case "Baki the Grappler":
-        this.myStats = [90, 40, 100]
-        this.myDojo = "Strongest on Earth"
+      case "Metal Guy":
+        let metalGuy = new Musician;
         break;
     }
-  };
+  }
+};
+
