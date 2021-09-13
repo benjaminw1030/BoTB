@@ -27,7 +27,7 @@ export default class Musician {
       if (hypeIncrease <= 0) {
         this.hype += 1;
       } else {
-      this.hype += (this.atk - enemy.def);
+      this.hype += (hypeIncrease);
       }
     }
       enemy.focusing = false

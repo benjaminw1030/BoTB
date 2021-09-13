@@ -6,11 +6,12 @@ describe('Musician', () => {
   let enemy;
 
   beforeEach(() => {
-    player = new Musician("Ringo", 2, 2, 2, 0, 0, [], [], true);
-    enemy = new Musician("Lars", 2, 2, 2, 0, 0, [], [], false);
+    player = new Musician("Ringo", 4, 2, 2, 0, 0, [], [], true);
+    enemy = new Musician("Lars", 4, 2, 2, 0, 0, [], [], false);
   });
 
-  test('description', () => {
-    expect(Template.parameter).toEqual("something");
+  test('Attacking will increase player hype.', () => {
+    player.attack(enemy)
+    expect(player.hype).toEqual(2);
   });
 });
