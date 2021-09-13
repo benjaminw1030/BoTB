@@ -1,20 +1,60 @@
+<!-- Start-form to enter name. Submit button for player name. -->
 <!DOCTYPE html>
 <html>
+
 <head>
-  <title></title>
+  <title>Battle of the Bands</title>
 </head>
+
 <body>
+  <div class="bg-intro-pic"></div>
   <div class="container">
-    <h3></h3>
-    <form id="template-form">
-      <label for="template-input"></label>
-      <input id="template-input" type="text">
-      <button type="submit"></button>
-    </form>
-    <ul id="template-response"></ul>
+    <div id="intro">
+      <form id="intro-form">
+        <label for="name-input"></label>
+        <input id="name-input" type="text">
+
+        <button type="submit"></button>
+      </form>
+    </div>
   </div>
-  <div id="portfolio">
-    <p>Back to <a href="https://benjaminw1030.github.io/portfolio/">my portfolio</a>.</p>
+  
+  <div id="garage-tutorial">
+
   </div>
+  <div id="main-prep">
+    <div id="metal-prep">
+      <img class="center-pic" src="assets/images/Neon Skulls Music Concert Poster.gif" alt="Metal concert poster">
+    </div>
+    <div id="country-prep">
+      <img class="center-pic" src="assets/images/Yellow Guitarist Concert Program.jpg" alt="Country Music Concert poster">
+    </div>
+    <div id="kpop-prep">
+      <img class="center-pic" src="assets/images/Electro House Concert Flyer.jpg" alt="Kpop concert poster">
+    </div>
+    <button type="click" class="btn-primary" id="shop-btn">Shop</button>
+    <button type="click" class="btn-primary" id="practice-btn">Practice</button>
+    <button type="click" class="btn-danger" id="jam-btn">Ready to Jam!</button>
+  </div>
+
+  <div id="metal-level">
+    <audio controls>
+      <source src="assets/metal-theme.ogg" type="audio/ogg">
+      <source src="assets/metal-theme.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+    </audio>
+  </div>
+
+  <div id="country-level">
+
+  </div>
+  <div id="kpop-level">
+
+  </div>
+  <div id="winners-level">
+
+  </div>
+
 </body>
+
 </html>
