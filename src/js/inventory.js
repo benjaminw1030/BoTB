@@ -7,38 +7,38 @@ export default class Inventory {
 
   unEquipInst() {
     this.gear.push(this.equipInst);
-    this.equipInst = "none";
+    this.equipInst = "beat up guitar";
   }
 
   unEquipArm() {
-    this.gear.push(this.equipArm);
-    this.equipArm = "clothing";
+    this.gear.push(this.equipOut);
+    this.equipOut = "t-shirt and jeans";
   }
 
   equip(item) {
-    const validWeapons = ["greatsword", "sword", "bow", "club"];
-    const validArmors = ["leather armor", "chainmail", "plate mail"];
+    const validInst = ["cheap guitar", "decent guitar", "keytar", "axe-shaped double guitar"];
+    const validOut = ["bad clothes", "shiny outfit", "cool outfit"];
     const gearIndex = this.gear.indexOf(item);
-    if (validWeapons.includes(item)) {
+    if (validInst.includes(item)) {
       this.gear.splice(gearIndex, 1);
-      if (this.equipWep !== "unarmed") {
-        this.gear.push(this.equipWep);
+      if (this.equipInst !== "beat up guitar") {
+        this.gear.push(this.equipInst);
       }
-      this.equipWep = item;
-    } else if (validArmors.includes(item)) {
+      this.equipInst = item;
+    } else if (validOut.includes(item)) {
       this.gear.splice(gearIndex, 1);
-      if (this.equipArm !== "clothing") {
-        this.gear.push(this.equipArm);
+      if (this.equipOut !== "t-shirt and jeans") {
+        this.gear.push(this.equipOut);
       }
-      this.equipArm = item;
+      this.equipOut = item;
     } else {
       return false;
     }
   }
 
-  drop(item, location) {
-    const gearIndex = this.gear.indexOf(item);
-    this.gear.splice(gearIndex, 1);
-    location.items.push(item);
-  }
+  // drop(item, location) {
+  //   const gearIndex = this.gear.indexOf(item);
+  //   this.gear.splice(gearIndex, 1);
+  //   location.items.push(item);
+  // }
 }

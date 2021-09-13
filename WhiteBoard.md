@@ -13,7 +13,7 @@
 6. Turn-based, player goes first (potentially speed stat)
   Keep track of turns, make it switch between player and opponent.
 7. Enemy is pulled - player has....
-  Play Chorus, flourish move % based off of stats, Take a Breather (double focus for a turn),
+  Play, flourish move % based off of stats, Take a Breather (double focus for a turn),
   Solo(Charge Attack) - (you/your enemy is preparing a complex melody), Inventory(bandmates, items) (disposable guitars to break, pyrotechnics, bite head off fake rodent)
   boss rolls between 1-4 and then that option is executed (put moves in array, reference in index, use switch/case to decide) turn counter (use modulus to switch based on remainder)
 8. check the rock of each opponent at the end of a turn to add effects and determine when the battle is over.
@@ -24,3 +24,8 @@ method endfight (checks rock meter if player >= 100, display player win, if enem
 
 Post Lunch - 
 End Game Goal = Build first dialogue(UI) + fight + prep (intro)
+
+
+combat either dropdown for more info with brief descriptor
+
+OR button and include guide in tutorial 
