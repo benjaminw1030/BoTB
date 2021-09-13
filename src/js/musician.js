@@ -71,6 +71,9 @@ export default class Musician {
     switch (bossTime) {
       case 1:
         this.attack(player);
+        //this.message()
+        //return statement in text box
+        // array with 4 statements in it - print 
         break;
       case 2:
         this.focus();

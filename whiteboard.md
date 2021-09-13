@@ -5,7 +5,7 @@
   let player = new musician(...., true)
   let enemy1 = new musician(...., false)
   etc etc
-4. (Placeholder Dialogue/Prep Phase) 
+4. (Placeholder Dialogue/Prep Phase)
   Prep Phase: Countdown Bar - every action brings down bar until 0 and next fight will begin (tied to button press??)
   Manage inventory(Equip/UnEquip stuff) Use Item (consumables) Resource Gathering, Shop (use this.money), Practice (increase stats) Talk w/ Bandmates (refresh bandmates)
   Posters for Next Event(displayed during prep)
@@ -22,7 +22,22 @@ method endfight (checks rock meter if player >= 100, display player win, if enem
 10. (Dialogue Piece/Prep Phase)
 
 
-Post Lunch - 
+Post Lunch -
 End Game Goal = Build first dialogue(UI) + fight + prep (intro)
 
 Separate divs - Intro, Metal, Country, Kpop, Finale
+ 
+
+Tuesday Goals - Skeleton Day
+Fix Audio in UI
+Testing for JS functions
+One pair work towards setting up tutorial fight (html/js)
+One pair work towards testing/debugging (that html/js)
+Get together 11:30 Merge
+Plan for rest of day
+Merge 2/Day
+
+Wednesday Goal - MVP Complete by EOD
+
+Thursday Goal - Flavor Text/Stretch Goals/Mock Pres
+Mock Presentation (20-30 min) Costumes???
