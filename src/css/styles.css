@@ -21,6 +21,62 @@ body {
   justify-content: center;
 }
 
+
+.phase1 {
+  display: show;
+}
+
+
+.phase2 {
+  display: none;
+}
+
+#intro-form {
+  z-index: 2;
+  position: fixed;
+  top: 15%;
+  left: 45%;
+  margin-top: -50px;
+  margin-left: -100px;
+}
+
+.btn-start {
+  z-index: 2;
+  position: fixed;
+  top: 80%;
+  left: 42%;
+  width: 220px;
+  height: 60px;
+}
+
+#name-input {
+ border-style: groove double;
+}
+
+#start-btn-text {
+  font-size:20px;
+}
+
+.hover {display: inline-block;
+  padding: 10px 15px;
+  font-size: 12px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 9px #999;
+  z-index: 1;
+}
+
+.hover:hover {background-color: #B833FF}
+
+.hover:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
 .bg-intro-pic {
   opacity: .7;
   position: absolute;
@@ -32,6 +88,8 @@ body {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+  z-index: 1;
+  display: show;
 }
 
 .center-pic {
@@ -39,4 +97,16 @@ body {
   margin-left: auto;
   margin-right: auto;
   width: 50%;
+}
+
+#metal-prep {
+  display: none;
+}
+
+#country-prep {
+  display: none;
+}
+
+#kpop-prep {
+  display: none
 }

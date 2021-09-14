@@ -11,69 +11,58 @@ export default class Musician {
     //player = boolean for true/false
     this.pc = pc;
     this.hype = 0;
-    this.focusing = false;
-    this.charging = false;
     this.focusMod = 1;
     this.soloMod = 1;
   }
-//play chorus = attack
-// flourish move ?
-// potentially for UI, check battle.musicianTurn to determine div to show
-//
+  //play chorus = attack
+  // flourish move ?
+  // potentially for UI, check battle.musicianTurn to determine div to show
+  //
   attack(enemy) {
-    if (enemy.focusing = true) {
-      enemy.focusMod = 2;
-      let hypeIncrease = (this.atk * this.soloMod) - (enemy.def * enemy.focusMod)
-      if (hypeIncrease <= 0) {
-        this.hype += 1;
-      } else {
+    let hypeIncrease = (this.atk * this.soloMod) - (enemy.def * enemy.focusMod)
+    if (hypeIncrease <= 0) {
+      this.hype += 1;
+    } else {
       this.hype += (hypeIncrease);
-      }
     }
-      enemy.focusing = false
-      enemy.focusMod = 1;
-    }
+    this.soloMod = 1;
+  }
 
   focus() {
-    this.focusing = true;
+    this.focusMod = 2;
     return `${this.name} is focusing`;
   }
 
   solo() {
-    this.charging = true;
+    this.soloMod = 2;
     return `${this.name} is charging`;
   }
 
   flourish(enemy) {
-    let successChance = Math.floor(Math.random(1,20));
+    let successChance = Math.floor(Math.random(1, 20));
     successChance += this.style;
-    if(successChance > 10) {
-      if (enemy.focusing = true) {
-        enemy.focusMod = 2;
-        let hypeIncrease = (this.atk * this.soloMod + this.style) - (enemy.def * enemy.focusMod)
-        if (hypeIncrease <= 0) {
-          this.hype += 1;
-        } else {
-        this.hype += (this.atk - enemy.def);
-        }
+    if (successChance > 10) {
+      let hypeIncrease = (this.atk * this.soloMod + this.style) - (enemy.def * enemy.focusMod)
+      if (hypeIncrease <= 0) {
+        this.hype += 1;
+      } else {
+        this.hype += (hypeIncrease);
       }
     } else {
       this.hype += 1;
     }
-      enemy.focusing = false
-      enemy.focusMod = 1;
-    }
+    this.soloMod = 1;
+  }
 
-
-// if battle.musicianTurn = 1 {
+  // if battle.musicianTurn = 1 {
+    //this.message()
+    //return statement in text box
+    // array with 4 statements in it - print 
   bossAction(player) {
-    let bossTime = Math.floor(Math.random(1,4));
+    let bossTime = Math.floor(Math.random(1, 4));
     switch (bossTime) {
       case 1:
         this.attack(player);
-        //this.message()
-        //return statement in text box
-        // array with 4 statements in it - print 
         break;
       case 2:
         this.focus();
@@ -84,7 +73,7 @@ export default class Musician {
       case 4:
         this.solo();
         break;
-    };
+    }
   }
 
 }
