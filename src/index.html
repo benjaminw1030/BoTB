@@ -19,37 +19,39 @@
     </div>
 <!-- intro end -->
 
-
-  <div id="battle-screen" class="phase2">
-    <div class="row">
-      <div class="progress col-5" style="height: 20px;">
+  <div id="battle-screen" class="phase2 container">
+    <div id="banner-box">BATTLE OF THE BANDS:This is where your current battle will display </div>
+    <div class="row bars">
+      <div class="progress col-6" style="height: 20px;">
         <div id="player-hype"class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
           <span id="current-progress"></span></div>
       </div>
     </div>
 
-    <button class="btn-danger hover" id="attack-btn" type="click">ATTTACK</button>
-    <button class="btn-primary hover" id="focus-btn" type="click">FOCUS</button>
-    <button class="btn-success hover" id="solo-btn" type="click">SOLO</button>
-    <button class="btn-warning hover" id="flourish-btn" type="click">FLOURISH</button>
-    <div id="attack-description">
-
+    <div id="button-box">
+      <button class="btn-danger hover" id="chorus-btn" type="click">CHORUS</button>
+      <button class="btn-primary hover" id="focus-btn" type="click">FOCUS</button>
+      <button class="btn-success hover" id="solo-btn" type="click">SOLO</button>
+      <button class="btn-warning hover" id="flourish-btn" type="click">FLOURISH</button>
+      <br>
+      <br>
+      <button class="btn-submit hover" id="confirm-btn" type="click">Confirm Attack</button>
     </div>
+    <div id="attack-description">This is a content box for battle messages</div>
+    
     <br> 
-    <button class="btn-submit hover" id="confirm-btn" type="click">Confirm Attack</button>
 
-    <div class="row">
+    <div class="row bars2">
       <h5 id="enemy-name"></h5>
-      <div class="progress col-5" style="height: 20px;">
+      <div class="progress col-6" style="height: 20px;">
         <div id="enemy-hype"class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
           <span id="current-progress"></span></div>
       </div>
     </div>
   </div>
 
-  <div id="garage-tutorial"></div>
 
-  <div id="main-prep" class="phase2">
+  <div id="main-prep" class="container phase3">
     <div id="metal-prep">
       <img class="center-pic" src="assets/images/Neon Skulls Music Concert Poster.gif" alt="Metal concert poster">
     </div>
@@ -64,7 +66,7 @@
     <button type="click" class="btn-danger hover" id="jam-btn">Ready to Jam!</button>
   </div>
 
-  <div id="metal-level" class="phase2">
+  <div id="metal-level" class="phase3">
     <figure>
       <figcaption>Astral Forest Theme Song:</figcaption>
       <audio loop class="metal-theme audio" src="http://docs.google.com/uc?export=open&id=1BOvUgz-4JT_L10RuTWXzei6FVTiQ1A3F" controls type="audio/wav">
@@ -73,7 +75,7 @@
     </figure>
   </div>
 
-  <div id="country-level" class="phase2">
+  <div id="country-level" class="phase3">
     <figure>
       <figcaption>Steve Madison Theme Song:</figcaption>
       <audio loop class="country-theme audio" src="http://docs.google.com/uc?export=open&id=125xZmtQEkX0qmr7oLc3g-rzajaP3Z0wm" controls type="audio/wav">
@@ -81,7 +83,7 @@
       </audio>
     </figure>
   </div>
-  <div id="kpop-level" class="phase2">
+  <div id="kpop-level" class="phase3">
     <figure>
       <figcaption>1GI Genesis Theme Song:</figcaption>
       <audio loop class="kpop-theme audio" src="http://docs.google.com/uc?export=open&id=1qRZ9AAdxXFCmrGPsR-tPr0a_Yufc9_DU" controls type="audio/wav">

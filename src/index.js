@@ -8,9 +8,15 @@ import Inventory from './js/inventory';
 
 $(".audio").prop("volume", 0.2);
 
+function assignConfirm(button) {
+  //switch (button) {
+  //
+  //}
+}
+
 $(document).ready(function () {
-  $('#intro-form').submit(function (event) {
-    event.preventDefault();
+  $('#intro-form').submit(function () {
+    // event.preventDefault();
     let inputName = $('#name').val();
     let player = new Musician(inputName, 1, 1, 1, 1, 1, [], [], true);
     let bestie = new Musician("Shaggy", 5, 5, 1, 1, 100, [], [], false);
@@ -28,7 +34,19 @@ $(document).ready(function () {
     $('#enemy.name').text(battles[battleIndex].enemy.name);
   });
   let currentProgress = 0;
-  $('#attack-button').click(function () {
+  $('#chorus-btn').click(function () {
+    $('#attack-description').text('Sing the chorus and gain some hype!');
+    assignConfirm("attack");
+  });
+  $('#focus-btn').click(function () {
+    $('#attack-description').text('Focus to outshine the enemy and lower their hype gain!');
+    assignConfirm("")
+  });
+  $('#solo-btn').click(function () {
+    $('#attack-description').text('Prepare an awesome solo for double the hype!');
+  });
+  $('#flourish-btn').click(function () {
+    $('#attack-description').text('Do a risky stylish flourish for extra hype!');
   });
   $('#confirm-btn').click(function () {
     currentProgress += 10;
@@ -38,11 +56,10 @@ $(document).ready(function () {
     // if (current_progress >= 100) {
     // }
   });
-
-
-
-});
-
+    
+    
+    
+})
 // confirm button => actually run the attack you selected, displays info to text box, then hide itself and show next turn button
 
 //enemy turn button => run battle.nextTurn(), run enemy.bossAction(player), output result of boss action to text box, then hide and show player turn button

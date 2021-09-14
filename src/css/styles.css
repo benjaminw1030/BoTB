@@ -23,12 +23,60 @@ body {
 
 
 .phase1 {
-  display: show;
+  display: none;
 }
 
 
 .phase2 {
-  display: none;
+  display: show;
+}
+
+.phase3 {
+  display:none;
+}
+
+#battle-screen {
+  flex-flow: column wrap;
+  justify-content: center;
+}
+
+#banner-box {
+  border: black;
+  background-image: linear-gradient(to right, red, yellow);
+  height: 100px;
+  justify-content: center;
+  
+}
+
+
+.bars {
+  position: relative;
+  top: 50%;
+  left: 25%;
+}
+
+.bars2 {
+  position: relative;
+  top: 40%;
+  left: 25%;
+}
+
+#attack-description{
+  position: relative;
+  left: 45%;
+  top: 25%;
+  margin-right: 55%;
+  border-style: solid;
+  border-width: 10px;
+  background-color: white;
+  width: 300px;
+  height: 300px;
+}
+
+#button-box {
+  position: relative;
+  top: 45%;
+  left: 25%;
 }
 
 #intro-form {
@@ -59,15 +107,17 @@ body {
 
 .hover {display: inline-block;
   padding: 10px 15px;
-  font-size: 12px;
+  font-size: 14px;
   cursor: pointer;
   text-align: center;
   text-decoration: none;
   outline: none;
   border: none;
-  border-radius: 10px;
+  border-radius: 12px;
   box-shadow: 0 9px #999;
   z-index: 1;
+  width:90px;
+  height: 75px;
 }
 
 .hover:hover {background-color: #B833FF}
