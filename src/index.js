@@ -1,13 +1,67 @@
-// import $ from 'jquery';
+import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
-// import Template from './js/template.js';
+import Musician from './js/musician';
+import Battle from './js/battle';
+import Inventory from './js/inventory';
 
-// $(document).ready(function() {
-//   $('#triangle-checker-form').submit(function(event) {
-//     event.preventDefault();
+$(".audio").prop("volume", 0.2);
 
-//     $('#response').append("<p>" + response + "</p>");
-//   });
-// });
+function assignConfirm(button) {
+  //switch (button) {
+  //
+  //}
+}
+
+$(document).ready(function () {
+  $('#intro-form').submit(function () {
+    // event.preventDefault();
+    let inputName = $('#name').val();
+    let player = new Musician(inputName, 1, 1, 1, 1, 1, [], [], true);
+    let bestie = new Musician("Shaggy", 5, 5, 1, 1, 100, [], [], false);
+    let grrrrl = new Musician("Astra", 1, 1, 1, 1, 1, [], [], false);
+    let steve = new Musician("Steve", 1, 1, 1, 1, 1, [], [], false);
+    let genesis = new Musician("1GI Genesis", 1, 1, 1, 1, 1, [], [], false);
+    let garageBattle = new Battle(player, bestie, 1);
+    let metalBattle = new Battle(player, grrrrl, 2);
+    let countryBattle = new Battle(player, steve, 3);
+    let kpopBattle = new Battle(player, genesis, 4);
+    let battles = [garageBattle, metalBattle, countryBattle, kpopBattle];
+    let battleIndex = 0;
+    $('.phase1').hide();
+    $('.phase2').show();
+    $('#enemy.name').text(battles[battleIndex].enemy.name);
+  });
+  let currentProgress = 0;
+  $('#chorus-btn').click(function () {
+    $('#attack-description').text('Sing the chorus and gain some hype!');
+    assignConfirm("attack");
+  });
+  $('#focus-btn').click(function () {
+    $('#attack-description').text('Focus to outshine the enemy and lower their hype gain!');
+    assignConfirm("")
+  });
+  $('#solo-btn').click(function () {
+    $('#attack-description').text('Prepare an awesome solo for double the hype!');
+  });
+  $('#flourish-btn').click(function () {
+    $('#attack-description').text('Do a risky stylish flourish for extra hype!');
+  });
+  $('#confirm-btn').click(function () {
+    currentProgress += 10;
+    $('#player-hype').css("width", currentProgress + "%")
+      .attr("aria-valuenow", currentProgress)
+      .text(currentProgress + "% Complete");
+    // if (current_progress >= 100) {
+    // }
+  });
+    
+    
+    
+})
+// confirm button => actually run the attack you selected, displays info to text box, then hide itself and show next turn button
+
+//enemy turn button => run battle.nextTurn(), run enemy.bossAction(player), output result of boss action to text box, then hide and show player turn button
+
+//player turn button => run battle.nextTurn(), hide itself and show confirm/action buttons
