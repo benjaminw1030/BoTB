@@ -18,38 +18,56 @@
         </form>
     </div>
 <!-- intro end -->
-
-  <div id="battle-screen" class="phase2 container">
-    <div id="banner-box">BATTLE OF THE BANDS:This is where your current battle will display </div>
-    <div class="row bars">
-      <div class="progress col-6" style="height: 20px;">
-        <div id="player-hype"class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
-          <span id="current-progress"></span></div>
+<div class="container main-row">
+  <div class="inventory-screen">
+    <div id="box17">This is a content box to display inventory</div>
+  </div>
+  
+  <div class="battle-screen phase2 container">
+    <div id="banner-box">BATTLE OF THE BANDS: This is where your current battle will display</div> 
+      <p class="hype-label"><span class="player-name"></span>'s hype level</p>
+        <div class="row bars">
+          <div class="progress col-9" style="height: 20px;">
+            <div id="player-hype"class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+              <span id="current-progress"></span></div>
+          </div>
+        </div>
+      <div id="button-box">
+        <div id="column1">
+          <div id="row1">
+            <button class="btn-danger hover spacing" id="chorus-btn" type="click">CHORUS</button>
+            <button class="btn-primary hover spacing" id="focus-btn" type="click">FOCUS</button>
+            <button class="btn-success hover spacing" id="solo-btn" type="click">SOLO</button>
+          </div>
+          <div id="row2">
+            <button class="btn-warning hover spacing" id="flourish-btn" type="click">FLOURISH</button>
+            <button class="btn-secondary hover spacing" id="item-btn" type="click">USE ITEM</button>
+            <button class="btn-info hover spacing" id="band-btn" type="click">CALL BAND</button>
+          </div>
+          <div id="column3">
+            <div id="attack-description">This is a content box</div>
+          </div>
+          <div id="row3">
+            <button class="btn-submit hover" id="confirm-btn" type="click">CONFIRM</button>
+          </div>
+        </div>
+        
       </div>
-    </div>
 
-    <div id="button-box">
-      <button class="btn-danger hover" id="chorus-btn" type="click">CHORUS</button>
-      <button class="btn-primary hover" id="focus-btn" type="click">FOCUS</button>
-      <button class="btn-success hover" id="solo-btn" type="click">SOLO</button>
-      <button class="btn-warning hover" id="flourish-btn" type="click">FLOURISH</button>
-      <br>
-      <br>
-      <button class="btn-submit hover" id="confirm-btn" type="click">Confirm Attack</button>
-    </div>
-    <div id="attack-description">This is a content box for battle messages</div>
-    
-    <br> 
-
-    <div class="row bars2">
-      <h5 id="enemy-name"></h5>
-      <div class="progress col-6" style="height: 20px;">
-        <div id="enemy-hype"class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
-          <span id="current-progress"></span></div>
+      <p class="hype-label"><span class="enemy-name"></span>'s hype level: </p>
+      <div class="row bars2">
+        <div class="progress col-9" style="height: 20px;">
+          <div id="enemy-hype"class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+            <span id="current-progress"></span></div>
+        </div>
       </div>
-    </div>
+  </div>
+  <div class="poster-screen">
+    <div id="box16">This is a content box to</div>
+    <div id="audio-box"></div>
   </div>
 
+</div>
 
   <div id="main-prep" class="container phase3">
     <div id="metal-prep">
