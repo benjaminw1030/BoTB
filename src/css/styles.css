@@ -38,17 +38,17 @@ body {
 }
 
 
-.phase1 {
+/* .phase1 {
   display: none;
-}
+} */
 
 
 .phase2 {
-  display: show;
+  display: none;
 }
 
 .phase3 {
-  display:none;
+  display: none;
 }
 
 .battle-screen {
@@ -228,5 +228,70 @@ body {
 
 #player-turn-btn,
 #enemy-turn-btn {
+  display: none;
+}
+
+#column10 {
+  flex: column;
+  justify-content: space-between;
+  position: relative;
+  
+}
+
+#column20 {
+  flex: column;
+  justify-content: start;
+  margin-top: 10px;
+
+}
+
+#prep-banner {
+  margin-top: 10px;
+  /* text-align: center; */
+
+}
+
+#dialogue-box {
+  position: relative;
+  border-style: solid;
+  border-width: 5px;
+  background-color: white;
+  width: 500px;
+  height: 200px;
+  margin-top:10px;
+  margin-bottom:10px;
+}
+
+.boss-pic {
+  width: 150px;
+  height: auto;
+  margin: 5px;
+  display: none;
+}
+
+.prep-pic {
+  width: 400px;
+  height: auto;
+  display: none;
+}
+
+.audio-center {
+  display: block;
+  margin: 0 auto;
+}
+
+/* #prep-page {
+  display: none;
+} */
+
+#battle-page {
+  display: none;
+}
+
+#victory-screen {
+  display:none;
+}
+
+#game-over {
   display: none;
 }
