@@ -17,15 +17,42 @@
           <button class="btn-start hover "button type="submit"><span id="start-btn-text">Begin Your Music Journey</span></button>
         </form>
     </div>
-<!-- intro end -->
-<div class="container main-row">
-  <div class="inventory-screen">
-    <div id="box17">This is a content box to display inventory</div>
+    <!-- intro end -->
+    <div class="container main-row">
+      <div class="inventory-screen">
+        <div id="box17">This is a content box to display inventory</div>
+        <div id="audio-box">
+          <div id="metal-level" class="phase3">
+            <figure>
+              <figcaption>Astral Forest Theme Song:</figcaption>
+              <audio loop class="metal-theme audio" src="http://docs.google.com/uc?export=open&id=1BOvUgz-4JT_L10RuTWXzei6FVTiQ1A3F" controls type="audio/wav">
+                Your browser does not support the audio element.
+              </audio>
+            </figure>
+          </div>
+          
+          <div id="country-level" class="phase3">
+            <figure>
+              <figcaption>Steve Madison Theme Song:</figcaption>
+              <audio loop class="country-theme audio" src="http://docs.google.com/uc?export=open&id=125xZmtQEkX0qmr7oLc3g-rzajaP3Z0wm" controls type="audio/wav">
+                Your browser does not support the audio element.
+              </audio>
+            </figure>
+          </div>
+          <div id="kpop-level" class="phase3">
+            <figure>
+              <figcaption>1GI Genesis Theme Song:</figcaption>
+              <audio loop class="kpop-theme audio" src="http://docs.google.com/uc?export=open&id=1qRZ9AAdxXFCmrGPsR-tPr0a_Yufc9_DU" controls type="audio/wav">
+                Your browser does not support the audio element.
+              </audio>
+            </figure>
+          </div>
+        </div>
   </div>
   
   <div class="battle-screen phase2 container">
     <div id="banner-box">BATTLE OF THE BANDS: This is where your current battle will display</div> 
-      <p class="hype-label"><span class="player-name"></span>'s hype level</p>
+    <p class="hype-label"><span class="player-name"></span>'s hype level</p>
         <div class="row bars">
           <div class="progress col-9" style="height: 20px;">
             <div id="player-hype"class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
@@ -41,14 +68,16 @@
           </div>
           <div id="row2">
             <button class="btn-warning hover spacing" id="flourish-btn" type="click">FLOURISH</button>
-            <button class="btn-secondary hover spacing" id="item-btn" type="click">USE ITEM</button>
-            <button class="btn-info hover spacing" id="band-btn" type="click">CALL BAND</button>
+            <button class="btn-info hover spacing" id="band-btn" type="click">BANDMATE</button>
           </div>
           <div id="column3">
             <div id="attack-description">This is a content box</div>
           </div>
           <div id="row3">
             <button class="btn-submit hover" id="confirm-btn" type="click">CONFIRM</button>
+            <button class="btn-submit hover" id="player-turn-btn" type="click">PLAYER TURN</button>
+            <button class="btn-submit hover" id="enemy-turn-btn" type="click">ENEMY TURN</button>
+            
           </div>
         </div>
         
@@ -64,7 +93,15 @@
   </div>
   <div class="poster-screen">
     <div id="box16">This is a content box to</div>
-    <div id="audio-box"></div>
+    <div id="metal-prep">
+      <img class="center-pic" src="assets/images/Neon Skulls Music Concert Poster.gif" alt="Metal concert poster">
+    </div>
+    <div id="country-prep">
+      <img class="center-pic" src="assets/images/Yellow Guitarist Concert Program.jpg" alt="Country Music Concert poster">
+    </div>
+    <div id="kpop-prep">
+      <img class="center-pic" src="assets/images/Electro House Concert Flyer.jpg" alt="Kpop concert poster">
+    </div>
   </div>
 
 </div>
@@ -84,31 +121,6 @@
     <button type="click" class="btn-danger hover" id="jam-btn">Ready to Jam!</button>
   </div>
 
-  <div id="metal-level" class="phase3">
-    <figure>
-      <figcaption>Astral Forest Theme Song:</figcaption>
-      <audio loop class="metal-theme audio" src="http://docs.google.com/uc?export=open&id=1BOvUgz-4JT_L10RuTWXzei6FVTiQ1A3F" controls type="audio/wav">
-        Your browser does not support the audio element.
-      </audio>
-    </figure>
-  </div>
-
-  <div id="country-level" class="phase3">
-    <figure>
-      <figcaption>Steve Madison Theme Song:</figcaption>
-      <audio loop class="country-theme audio" src="http://docs.google.com/uc?export=open&id=125xZmtQEkX0qmr7oLc3g-rzajaP3Z0wm" controls type="audio/wav">
-        Your browser does not support the audio element.
-      </audio>
-    </figure>
-  </div>
-  <div id="kpop-level" class="phase3">
-    <figure>
-      <figcaption>1GI Genesis Theme Song:</figcaption>
-      <audio loop class="kpop-theme audio" src="http://docs.google.com/uc?export=open&id=1qRZ9AAdxXFCmrGPsR-tPr0a_Yufc9_DU" controls type="audio/wav">
-        Your browser does not support the audio element.
-      </audio>
-    </figure>
-  </div>
   <div id="winners-level">
 
   </div>

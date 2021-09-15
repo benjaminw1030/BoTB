@@ -38,6 +38,7 @@ Plan for rest of day
 Merge 2/Day
 
 Wednesday Goal - MVP Complete by EOD
+MVP- working battle levels
 
 Thursday Goal - Flavor Text/Stretch Goals/Mock Pres
 Mock Presentation (20-30 min) Costumes???

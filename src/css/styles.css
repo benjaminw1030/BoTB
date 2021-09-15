@@ -219,3 +219,14 @@ body {
 #kpop-prep {
   display: none
 }
+
+#row3 {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+#player-turn-btn,
+#enemy-turn-btn {
+  display: none;
+}

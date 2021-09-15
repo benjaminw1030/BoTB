@@ -26,17 +26,18 @@ export default class Musician {
       this.hypeIncrease = 1;
     }
     this.hype += this.hypeIncrease;
+    this.lastAction = 'chorus';
   }
 
 
   focus() {
     this.focusMod = 2;
-    return `${this.name} is focusing`;
+    this.lastAction = 'focus';
   }
 
   solo() {
     this.soloMod = 2;
-    return `${this.name} is charging`;
+    this.lastAction = 'solo';
   }
 
   flourish(enemy) {
@@ -52,32 +53,32 @@ export default class Musician {
       this.hype += this.hypeIncrease;
       this.soloMod = 1;
     }
+    this.lastAction = 'flourish';
   }
   // if battle.musicianTurn = 1 {
   //this.message()
   //return statement in text box
   // array with 4 statements in it - print 
   bossAction(player) {
-    let bossTime = Math.floor(Math.random(1, 4));
-    switch (bossTime) {
+    let bossTime = Math.ceil(Math.random() * 4);
+      switch (bossTime) {
       case 1:
         this.attack(player);
-        this.lastAction = "attack";
+        console.log("boss chorus")
         break;
       case 2:
         this.focus();
-        this.lastAction = "focus";
+        console.log("boss focus")
         break;
       case 3:
         this.flourish(player);
-        this.lastAction = "flourish";
+        console.log("boss flourish")
         break;
       case 4:
         this.solo();
-        this.lastAction = "solo";
+        console.log("boss solo")
         break;
     }
   }
-
 }
 
