@@ -31,10 +31,12 @@ describe('Battle', () => {
     expect(player.hype).toEqual(0);
     player.hype = 0;
     enemy.hype = 101;
-    expect(battle.winBattleCheck()).toEqual(2);
+    battle.nextTurn();
+    expect(battle.lost).toEqual(true);
     player.hype = 101;
     enemy.hype = 0;
-    expect(battle.winBattleCheck()).toEqual(1);
+    battle.nextTurn();
+    expect(battle.won).toEqual(true);
   });
 
 });

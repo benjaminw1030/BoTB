@@ -64,17 +64,17 @@ describe('Musician', () => {
 
   test('bossAction will randomly choose between the four choices', () => {
     enemy.style = 20;
-    jest.spyOn(global.Math, "random").mockReturnValue(1)
+    jest.spyOn(global.Math, "random").mockReturnValue(.25)
     enemy.bossAction(player)
     expect(enemy.hype).toEqual(4);
-    jest.spyOn(global.Math, "random").mockReturnValue(2)
+    jest.spyOn(global.Math, "random").mockReturnValue(.5)
     enemy.bossAction(player)
     expect(enemy.focusMod).toEqual(2);
-    jest.spyOn(global.Math, "random").mockReturnValue(3)
+    jest.spyOn(global.Math, "random").mockReturnValue(.75)
     enemy.hype = 0;
     enemy.bossAction(player)
     expect(enemy.hype).toEqual(24);
-    jest.spyOn(global.Math, "random").mockReturnValue(4)
+    jest.spyOn(global.Math, "random").mockReturnValue(1)
     enemy.bossAction(player)
     expect(enemy.soloMod).toEqual(2);
   });
