@@ -37,12 +37,16 @@ User names their band and hits the stage! In each level, the user will face off 
 
 * [MIT License](https://opensource.org/licenses/MIT)
 
-Copyright (c) 2021 Benjamin Wilson
+Copyright (c) 2021 
+Benjamin Wilson
+
+Dialogue:
+Becket Harvey
 
 ## Contact Information
 
 Anna Clarke: <anclarkie@gmail.com>
 Benjamin Wilson: <benjaminw1030@gmail.com>
-Brandon Eads:
 Becket Harvey: My repo at Sunshinepunch.github!
-Kody Green:
+Brandon Eads
+Kody Green
