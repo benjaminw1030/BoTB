@@ -1,4 +1,5 @@
-export { shaggiLines, metalLines, countryLines, kpopLines, endLines }
+export { shaggiLines, metalLines, countryLines, kpopLines, endLines, shaggiBattleLines, metalBattleLines, countryBattleLines, kpopBattleLines }
+
 
 const shaggiLines = new Map(
   [
@@ -9,6 +10,18 @@ const shaggiLines = new Map(
     [5, '*You take a second to channel the spirit of your musical ancestors. Here we go! (click -Let’s Jam- to proceed!)']
   ]
 );
+
+const shaggiBattleLines =
+    [
+    "Yowza! Catchy!",
+    "Yawn….I mean that’s a little stale…",
+    "WOAH! Sick Riff!",
+    "That’s actually pretty good!",
+    "If that's as good as it gets I'm gonna go watch TV.",
+    "Haven't heard that before!",
+    "Alright! Alright! Here we go!",
+    "ROCK ON BROTHER!"
+    ]
 
 
 const metalLines = new Map(
@@ -33,6 +46,19 @@ const metalLines = new Map(
     [18, "*The crowd is mostly silent and Shaggi grins at you sheepishly. You manage to convey without words that a band meeting to discuss the name is on the horizon. The pair of you step out from backstage, and Astra’s drumstick makes a sliding motion across her throat. A rush of adrenaline surges forth as you take your place on the stage. Get ready! It’s now or never!*"]
   ]
 );
+
+const metalBattleLines =
+  [
+    "Pfft….don’t quit your day job.",
+    "You know what happens if you mess with the metal, right? There’s a whole song about it.",
+    "*Astra’s hands whirl in a dizzying blur as she unleashes a brutal drum solo!*",
+    "Hot @*#& that was tasty!",
+    "If this is your best, you should stick with the rest.",
+    "I don't WANNA work, I just wanna BANG ON THE DRUMS ALL DAY!",
+    "You can't keep up this tempo forever!",
+    "When I'm done here I'm gonna drum your FACE in."
+  ]
+
 
 const countryLines = new Map(
   [
@@ -61,6 +87,19 @@ const countryLines = new Map(
     [23, '*For once you agree with Shaggi. Your heartbeat picks up pace as you hear the speakers announcing the start of the show. Your band heads to the stage. It’s time to shine!*']
   ]
 );
+
+const countryBattleLines =
+  [
+    "Y’all sing flatter than a pancake on the plains of Omaha.",
+    "I ain’t scared of no two-bit garage band.",
+    "*The Good Ole Boys are harmonizing with Steve – the audience loves it!*",
+    "Time to put you cows out to pasture.",
+    "There's a saying about your type where I come from. It ain't good.",
+    "If that guy requests Country Roads one more time I'll punch him myself.",
+    "Now settle down there little doggie.",
+    "This ain't over. Hell it's just starting!"
+]
+
 
 const kpopLines = new Map(
   [
@@ -95,9 +134,25 @@ const kpopLines = new Map(
   ]
 );
 
+const kpopBattleLines =
+  [
+    "*Genesis performs a coordinated dance number * “Step to us and we’ll step on you.”",
+    "You lack refinement – as expected of backwater hillbillies.",
+    "*Each Genesis member performs their signature move, then blows a kiss. The audience goes wild!*",
+    "You….you will not best the collective!",
+    "Together we are more than the sum of our parts. Kneel!",
+    "You are about to get a synchronized BEATDOWN.",
+    "There's nothing shameful about giving up. For someone like you that is.",
+    "What's this?! Where are you drawing this power from?",
+    "You can't defeat the Genesis beat!"
+]
+
+
 const endLines = new Map(
   [
     [1, 'The millions of faces screaming your name feel deserved. You put in such a medium amount of effort, and it paid off. The members of Genesis stagger off the stage while the crowd continues to shout: "ENCORE! ENCORE! ENCORE!" *You turn to your bandmates. Shaggi tosses a thumbs up, Astra flips the horns, and Steve tips his hat. Facing the crowd you raise your guitar and your fist to the sky. You are a ROCKSTAR.*'],
   ]
 );
 
+
+// "*all speaking at once*" + "\n" + "Impossible" + "\n" + 'No way!' + "\n" +  'You...had such power?!' + "\n" +  'I want to be a chef - I hate this!' + "\n" +  'Genesis is Genefinished...'

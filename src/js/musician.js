@@ -1,5 +1,5 @@
 export default class Musician {
-  constructor(name, atk, def, style, fame, money, bandmates, dialog) {
+  constructor(name, atk, def, style, fame, money, bandmates, dialog, battlequote) {
     this.name = name;
     this.atk = atk;
     this.def = def;
@@ -13,6 +13,7 @@ export default class Musician {
     this.soloMod = 1;
     this.lastAction = '';
     this.dialog = dialog;
+    this.battlequote = battlequote;
   }
 
   attack(enemy) {
@@ -47,6 +48,10 @@ export default class Musician {
     this.hype += this.hypeIncrease;
     this.soloMod = 1;
     this.lastAction = 'flourish';
+  }
+
+  getQuote() {
+    return this.battlequote[Math.floor(Math.random()*this.battlequote.length)];
   }
 
   bossAction(player) {

@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import Musician from './js/musician';
 import Battle from './js/battle';
-import { shaggiLines, metalLines, countryLines, kpopLines, endLines } from './js/dialog';
+import { shaggiLines, metalLines, countryLines, kpopLines, endLines, shaggiBattleLines, metalBattleLines, countryBattleLines, kpopBattleLines} from './js/dialog';
 // import Inventory from './js/inventory';
 
 $(".audio").prop("volume", 0.2);
@@ -14,18 +14,21 @@ function confirmChorus(player, enemy) {
   player.attack(enemy);
   increasePlayerBar(player);
   $('#attack-description').text(`You play the chorus and gain ${player.hypeIncrease} hype!`);
+  $('#dialogue-text').text(`${enemy.getQuote()}`);
 }
 
 function confirmFocus(player, enemy) {
   player.focus(enemy);
   increasePlayerBar(player);
   $('#attack-description').text(`You focus and prepare to drown out ${enemy.name}!`);
+  $('#dialogue-text').text(`${enemy.getQuote()}`);
 }
 
 function confirmSolo(player) {
   player.solo();
   increasePlayerBar(player);
   $('#attack-description').text(`You prepare an awesome solo! Your next few bars will be extra hype!`);
+  $('#dialogue-text').text(`${enemy.getQuote()}`);
 }
 
 function confirmFlourish(player, enemy) {
@@ -33,8 +36,10 @@ function confirmFlourish(player, enemy) {
   increasePlayerBar(player);
   if (player.hypeIncrease > 1) {
     $('#attack-description').text(`You perform a stylish move and wow the crowd for ${player.hypeIncrease} hype!`);
+    $('#dialogue-text').text(`${enemy.getQuote()}`);
   } else {
     $('#attack-description').text(`You flub your performance, only gaining a little hype.`);
+    $('#dialogue-text').text("Oof. And you wanna be a star?");
   }
 }
 
@@ -168,16 +173,16 @@ $(document).ready(function () {
     event.preventDefault();
     let inputName = $('#name-input').val();
     let player = new Musician(inputName, 1000, 3, 5, 1, 1, [], {});
-    let bestie = new Musician("Shaggi", 5, 3, 5, 1, 100, [], shaggiLines);
-    let grrrrl = new Musician("Astra", 1, 1, 1, 1, 1, [], metalLines);
-    let steve = new Musician("Steve", 1, 1, 1, 1, 1, [], countryLines);
-    let genesis = new Musician("Genesis", 1, 1, 1, 1, 1, [], kpopLines);
+    let bestie = new Musician("Shaggi", 5, 3, 5, 1, 100, [], shaggiLines, shaggiBattleLines);
+    let grrrrl = new Musician("Astra", 1, 1, 1, 1, 1, [], metalLines, metalBattleLines);
+    let steve = new Musician("Steve", 1, 1, 1, 1, 1, [], countryLines, countryBattleLines);
+    let genesis = new Musician("Genesis", 1, 1, 1, 1, 1, [], kpopLines, kpopBattleLines);
     let end = new Musician("end", 1, 1, 1, 1, 1, [], endLines);
     let garageBattle = new Battle(player, bestie, 1);
     let metalBattle = new Battle(player, grrrrl, 2);
     let countryBattle = new Battle(player, steve, 3);
     let kpopBattle = new Battle(player, genesis, 4);
-    let final = new Battle(player, end, 5)
+    let final = new Battle(player, end, 5);
     let battles = [garageBattle, metalBattle, countryBattle, kpopBattle, final];
     let battleIndex = 0;
     let currentEnemy = battles[battleIndex].enemy;
@@ -221,6 +226,7 @@ $(document).ready(function () {
         getDialogue(currentEnemy, line);
         line++;
         displayCurrentEnemy(currentEnemy);
+        $('#dialogue-text').text("");
       } else {
         currentEnemy.bossAction(player);
         enemyActionOutput(currentEnemy);
