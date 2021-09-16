@@ -1,4 +1,4 @@
-# Battle of the Bands
+ # Battle of the Bands
 
 #### An RPG game where user starts a band and beats other bands in musical combat.
 
@@ -26,27 +26,13 @@ User names their band and hits the stage! In each level, the user will face off 
 4. Type "npm install" in the terminal.
 5. Type "npm run start" to output an index.html file in the "dist" directory and bring up the distribution build in a Chrome web browser.
 6. You can also open a development server by typing "npm run start".
-
+See it on [GitHub Pages](https://github.com/benjaminw1030/battle-of-the-bands/)
 
 ## Known Bugs
 
-* _Any known issues_
-* _should go here_
+* Name input does not have a character restriction and may cause issues if too many are entered. 
+* Audio may not always play automatically.
 
 ## License
 
 * [MIT License](https://opensource.org/licenses/MIT)
-
-Copyright (c) 2021 
-Benjamin Wilson
-
-Dialogue:
-Becket Harvey
-
-## Contact Information
-
-Anna Clarke: <anclarkie@gmail.com>
-Benjamin Wilson: <benjaminw1030@gmail.com>
-Becket Harvey: My repo at Sunshinepunch.github!
-Brandon Eads
-Kody Green
