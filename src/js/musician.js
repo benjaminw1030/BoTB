@@ -1,18 +1,17 @@
 export default class Musician {
-  constructor(name, atk, def, style, fame, bandmates, dialog, battlequote) {
+  constructor(name, atk, def, style, bandmates, dialog, battlequote) {
     this.name = name;
     this.atk = atk;
     this.def = def;
     this.style = style;
-    this.fame = fame;
     this.bandmates = bandmates;
+    this.dialog = dialog;
+    this.battlequote = battlequote;
     this.hypeIncrease = 0;
     this.hype = 0;
     this.focusMod = 1;
     this.soloMod = 1;
     this.lastAction = '';
-    this.dialog = dialog;
-    this.battlequote = battlequote;
   }
 
   attack(enemy) {
@@ -50,24 +49,36 @@ export default class Musician {
   }
 
   getQuote() {
-    return this.battlequote[Math.floor(Math.random()*this.battlequote.length)];
+    return this.battlequote[Math.floor(Math.random() * this.battlequote.length)];
   }
 
   bossAction(player) {
-    let bossTime = Math.ceil(Math.random() * 4);
-    switch (bossTime) {
-      case 1:
-        this.attack(player);
-        break;
-      case 2:
-        this.focus();
-        break;
-      case 3:
-        this.flourish(player);
-        break;
-      case 4:
-        this.solo();
-        break;
+    if (this.lastAction === "solo") {
+      let bossTime = Math.ceil(Math.random() * 2);
+      switch (bossTime) {
+        case 1:
+          this.attack(player);
+          break;
+        case 2:
+          this.flourish(player);
+          break;
+      }
+    } else {
+      let bossTime = Math.ceil(Math.random() * 4);
+      switch (bossTime) {
+        case 1:
+          this.attack(player);
+          break;
+        case 2:
+          this.focus();
+          break;
+        case 3:
+          this.flourish(player);
+          break;
+        case 4:
+          this.solo();
+          break;
+      }
     }
   }
 
@@ -84,7 +95,6 @@ export default class Musician {
         bandmateHype = 20;
         break;
     }
-    this.hype += this.hypeIncrease;
     this.hypeIncrease = bandmateHype - (enemy.def * enemy.focusMod);
   }
 }

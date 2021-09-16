@@ -4,11 +4,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import Musician from './js/musician';
 import Battle from './js/battle';
-import { shaggiLines, metalLines, countryLines, kpopLines, endLines, shaggiBattleLines, metalBattleLines, countryBattleLines, kpopBattleLines} from './js/dialog';
+import { shaggiLines, metalLines, countryLines, kpopLines, endLines, shaggiBattleLines, metalBattleLines, countryBattleLines, kpopBattleLines } from './js/dialog';
 // import Inventory from './js/inventory';
 
-$(".audio").prop("volume", 0.2);
-$(".victory-theme").prop("volume", 0.5);
+$(".audio").prop("volume", 0.0);
+$(".victory-theme").prop("volume", 0.0);
 
 function confirmChorus(player, enemy) {
   player.attack(enemy);
@@ -31,6 +31,13 @@ function confirmSolo(player, enemy) {
   $('#dialogue-text').text(`${enemy.getQuote()}`);
 }
 
+function confirmBandmate(player, enemy, bandmate) {
+  player.bandmate(bandmate, enemy);
+  increasePlayerBar(player);
+  $('#attack-description').text(`${bandmate} does an awesome move for ${player.hypeIncrease} hype!`);
+  $('#dialogue-text').text(`${enemy.getQuote()}`);
+}
+
 function confirmFlourish(player, enemy) {
   player.flourish(enemy);
   increasePlayerBar(player);
@@ -43,7 +50,7 @@ function confirmFlourish(player, enemy) {
   }
 }
 
-function assignConfirm(button, player, enemy) {
+function assignConfirm(button, player, enemy, bandmate) {
   $('#confirm-btn').unbind();
   switch (button) {
     case 'chorus':
@@ -58,12 +65,17 @@ function assignConfirm(button, player, enemy) {
       break;
     case 'solo':
       $('#confirm-btn').on("click", function () {
-        confirmSolo(player);
+        confirmSolo(player, enemy);
       });
       break;
     case 'flourish':
       $('#confirm-btn').on("click", function () {
         confirmFlourish(player, enemy);
+      });
+      break;
+    case 'bandmate':
+      $('#confirm-btn').on("click", function () {
+        confirmBandmate(player, enemy, bandmate);
       });
   }
   $('#confirm-btn').on("click", function () {
@@ -87,21 +99,30 @@ function increaseEnemyBar(enemy) {
 
 function displayCurrentEnemy(enemy) {
   $('.enemy').hide();
+  $('.audio').get(0).pause();
+  $('.audio').get(1).pause();
+  $('.audio').get(2).pause();
+  $('.audio').get(3).pause();
   switch (enemy.name) {
     case 'Shaggi':
-      $('.shaggi').show();
+      $('.shaggi, .garage-theme').show();
+      $('.garage-theme').get(0).play();
       break;
     case 'Astra':
-      $('.astra').show();
+      $('.astra, .metal-theme').show();
+      $('.metal-theme').get(0).play();
       break;
     case 'Steve':
-      $('.steve').show();
+      $('.steve, country-theme').show();
+      $('.country-theme').get(0).play();
       break;
     case 'Genesis':
-      $('.genesis').show();
+      $('.genesis, .kpop-theme').show();
+      $('.kpop-theme').get(0).play();
       break;
   }
 }
+
 
 function enemyActionOutput(enemy) {
   switch (enemy.lastAction) {
@@ -124,24 +145,55 @@ function enemyActionOutput(enemy) {
   }
 }
 
+function changeStats(player, enemy) {
+  switch (enemy.name) {
+    case 'Shaggi':
+      player.atk += 1;
+      player.def += 2;
+      player.style += 1;
+      break;
+    case 'Astra':
+      player.atk += 1;
+      player.def += 2;
+      player.style += 2;
+      break;
+    case 'Steve':
+      player.atk += 2;
+      player.def += 1;
+      player.style += 1;
+      break;
+  }
+}
+
+
+function bandmateSelect(player, enemy) {
+  $('.bandmates').hide();
+  if (player.bandmates.length === 0) {
+    $('#attack-description').text('You have no friends!');
+  } else {
+    player.bandmates.forEach(bandmate => {
+      console.log(bandmate)
+      $(`#${bandmate}-btn`).show();
+      $(`#${bandmate}-btn`).click(function () {
+        $('#attack-description').text(`${bandmate} pumps the crowd with a flawless solo!`);
+        assignConfirm("bandmate", player, enemy, bandmate);
+      });
+    })
+  }
+}
+
 function battleStatus(player, enemy, battleIndex, battles) {
   if (battles[battleIndex].won === true) {
     $('.battle-phase').hide();
-    $('.prep-phase').show();
+    $('.prep-phase').fadeIn(600);
+    changeStats(player, enemy);
     player.bandmates.push(enemy.name);
     player.hype = 0;
-    increasePlayerBar(player);
-    increaseEnemyBar(enemy);
-  // } else if (battles[battleIndex].won === true && battleIndex === 4) {
-  //   $('.prep-phase').hide();
-  //   $('.battle-phase').hide();
-  //   $('.start-phase').hide();
-  //   $('#victory-screen').show();
   } else if (battles[battleIndex].lost === true) {
-    $('.prep-phase').hide();
-    $('.battle-phase').hide();
+    $('.prep-phase').fadeOut(500);
+    $('.battle-phase').fadeOut(1000);
     $('.start-phase').hide();
-    $('#game-over').show();
+    $('#game-over').fadeIn(600);
   }
 }
 
@@ -150,7 +202,7 @@ function getDialogue(enemy, line) {
   $(`#dialogue-output`).text(`${dialog}`);
   if (enemy.dialog.size === line && enemy.name === "end") {
     $('.prep-phase').hide();
-    $('#victory-screen').show();
+    $('#victory-screen').fadeIn(600);
   }
   else if (enemy.dialog.size === line) {
     $('#next-btn').hide();
@@ -172,12 +224,12 @@ $(document).ready(function () {
   $('#intro-form').submit(function () {
     event.preventDefault();
     let inputName = $('#name-input').val();
-    let player = new Musician(inputName, 1000, 3, 5, 1, [], {});
-    let bestie = new Musician("Shaggi", 5, 3, 5, 1, [], shaggiLines, shaggiBattleLines);
-    let grrrrl = new Musician("Astra", 1, 1, 1, 1, [], metalLines, metalBattleLines);
-    let steve = new Musician("Steve", 1, 1, 1, 1, [], countryLines, countryBattleLines);
-    let genesis = new Musician("Genesis", 1, 1, 1, 1, [], kpopLines, kpopBattleLines);
-    let end = new Musician("end", 1, 1, 1, 1, [], endLines);
+    let player = new Musician(inputName, 1000, 4, 5, [], {});
+    let bestie = new Musician("Shaggi", 1000, 3, 5, [], shaggiLines, shaggiBattleLines);
+    let grrrrl = new Musician("Astra", 6, 5, 6, [], metalLines, metalBattleLines);
+    let steve = new Musician("Steve", 8, 8, 7, [], countryLines, countryBattleLines);
+    let genesis = new Musician("Genesis", 10, 8, 8, [], kpopLines, kpopBattleLines);
+    let end = new Musician("end", 1, 1, 1, [], endLines);
     let garageBattle = new Battle(player, bestie, 1);
     let metalBattle = new Battle(player, grrrrl, 2);
     let countryBattle = new Battle(player, steve, 3);
@@ -187,8 +239,8 @@ $(document).ready(function () {
     let battleIndex = 0;
     let currentEnemy = battles[battleIndex].enemy;
     let line = 1;
-    $('.start-phase').hide();
-    $('.prep-phase').show();
+    $('.start-phase').fadeOut(300);
+    $('.prep-phase').fadeIn(2800);
     $('.player-name').text(player.name);
     $('.enemy-name').text(currentEnemy.name);
     displayCurrentEnemy(currentEnemy);
@@ -253,14 +305,20 @@ $(document).ready(function () {
       line++;
     });
 
+    $('#band-btn').click(function () {
+      bandmateSelect(player, currentEnemy);
+    });
+
     $('.game-over-btn').click(function () {
       location.reload();
     });
 
     $('.battle-ready').click(function () {
       line = 1;
+      increasePlayerBar(player);
+      increaseEnemyBar(currentEnemy);
       $(".prep-phase").hide();
-      $(".battle-phase").show();
+      $(".battle-phase").fadeIn(1000);
     });
   });
 });

@@ -7,7 +7,7 @@ Section 5 - Pics (222 - End)
 */
 
 
-.audio-center {
+audio {
   display: block;
   margin: 0 auto;
 }
@@ -16,6 +16,19 @@ Section 5 - Pics (222 - End)
 body {
   background-color: #0B0C10;
   color: #C5C6C7;
+}
+
+figcaption {
+  margin: 0px auto 0px auto;
+  text-align: center;
+  background-color: solid black;
+  font-family: 'Droid Sans Mono';
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+  padding: 10px 0;
+  width: fit-content;
+  position: relative;
 }
 
 .spacing {
@@ -31,6 +44,9 @@ body {
   display: none;
 } */
 
+#lets-jam-btn {
+  display: none;
+}
 
 .prep-phase {
   display: none;
@@ -145,6 +161,11 @@ body {
   color: black;
 }
 
+#enemy-turn-btn {
+  position: relative;
+  right: 30%;
+}
+
 #prep-banner {
   margin-top: 10px;
 
@@ -165,6 +186,12 @@ body {
   left: 45%;
   width: 220px;
   height: 60px;
+}
+
+.game-over-btn {
+  left: 45%;
+  position: relative;
+  top: 80%;
 }
 
 .hover {
@@ -264,6 +291,20 @@ body {
   display: none;
 }
 
+
+
+#Shaggi-btn {
+  display: none;
+}
+
+#Astra-btn {
+  display: none;
+}
+
+#Steve-btn {
+  display: none;
+}
+
 /* SECTION 5 this is where the CSS for pictures lives */
 
 .boss-pic {
@@ -307,7 +348,7 @@ body {
   height: 100%;
   width: 80%;
   background-attachment: fixed;
-  background-image: url(../assets/images/metal2.jpg);
+  background-image: url(../assets/images/metal-boss-female.jpg);
   object-fit: none;
   background-repeat: no-repeat;
   background-size: contain;
