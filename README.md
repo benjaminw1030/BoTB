@@ -44,5 +44,5 @@ Copyright (c) 2021 Benjamin Wilson
 Anna Clarke: <anclarkie@gmail.com>
 Benjamin Wilson: <benjaminw1030@gmail.com>
 Brandon Eads:
-Beckett Harvey:
+Becket Harvey: My repo at Sunshinepunch.github!
 Kody Green:
