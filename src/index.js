@@ -24,7 +24,7 @@ function confirmFocus(player, enemy) {
   $('#dialogue-text').text(`${enemy.getQuote()}`);
 }
 
-function confirmSolo(player) {
+function confirmSolo(player, enemy) {
   player.solo();
   increasePlayerBar(player);
   $('#attack-description').text(`You prepare an awesome solo! Your next few bars will be extra hype!`);
@@ -227,6 +227,7 @@ $(document).ready(function () {
         line++;
         displayCurrentEnemy(currentEnemy);
         $('#dialogue-text').text("");
+        $('#attack-description').text("");
       } else {
         currentEnemy.bossAction(player);
         enemyActionOutput(currentEnemy);

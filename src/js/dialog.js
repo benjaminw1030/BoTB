@@ -70,7 +70,7 @@ const countryLines = new Map(
     [6, '*The man is practically salivating as he nods to Shaggi’s terms. You wish you had not dropped out of business school before they covered this situation. While Shaggi is signing away your lives on a tablet the man produces, you see Astra approach from behind. You turn to face her.*'],
     [7, 'ASTRA: Wow….you’re getting signed? I gotta be honest, my band and I just had a huge fight. I guess the girls think if we can get dusted by a couple yokels in band shirts, we aren’t meshing well. I thought you were pretty talented, and I can’t help but notice you could use a drummer…. '],
     [8, '*Shaggi is too busy being fleeced to notice. Well if he can make impulse decisions, so can you. You nod and shake Astra’s hand. Looks like your little band gained a member!*'],
-    [9, 'NOTE: You can now call upon Astra to unleash a drum solo – Remember, you’re still the star here so you’ll only be able to spotlight one bandmate.'],
+    [9, 'NOTE: You can now call upon Astra to unleash a drum solo – Remember, you’re still the star here so you’ll only be able to spotlight one bandmate per performance.'],
     [10, '*A couple weeks pass as you and your new band practice – you’re surprised at the synergy, but Shaggi keeps saying it’s your ‘star quality’ bringing out their innate talent. Astra is ruthless in her expectations, pushing the band to new heights in a short amount of time. Before you know it, your(ugh) ‘manager’ has booked a sizeable gig. Branding you as “The Bandslayers”, he’s arranged for you to face off in another battle of the bands in Waco Texas!*'],
     [11,  'He’s arranged to fly you all down where you’ll be premiering at the Holly Concert Hall. You’re playing against someone you’ve heard of – Steve Madison and the Good Ole Boys! Actual country music stars! Before you know it you find yourself backstage at the Holly with your band – minutes before your time to play.*'],
     [12, 'ASTRA: Alright team. This is it – if we perform well here the sky is the limit. If we fail we get meme’d on ruthlessly until we die in obscurity. No pressure.'],
@@ -103,7 +103,7 @@ const countryBattleLines =
 
 const kpopLines = new Map(
   [
-    [1, '*The audience’s cheering is so loud they may as well be backstage with you. A few of the venue staff are applauding your band as the three of you high-five each other. Astra’s eyes are alight with glee, and SHAGGI can’t stop laughing. You feel great! You notice Steve waving at you and motion him over.*'],
+    [1, '*The audience’s cheering is so loud they may as well be backstage with you. A few of the venue staff are applauding your band as the three of you high-five each other. Astra’s eyes are alight with glee, and Shaggi can’t stop laughing. You feel great! You notice Steve waving at you and motion him over.*'],
     [2, 'STEVE: I must say that was one helluva show y’all put on. I might have underestimated you city slickers. Takes a real good musician to turn a country boy’s audience on him in his own town. '],
     [3, 'ASTRA: You can drop the act – nobody’s watching.'],
     [4, 'STEVE: Ain’t an act little lady. Some people just talk different.  While we’re on the subject of acts though….my boys miss our hometown and wanted to take a hiatus from the biz after this show. I intend to oblige em, but I was wondering if your little operation was looking for an opener?'],
