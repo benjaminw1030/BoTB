@@ -261,8 +261,8 @@ $(document).ready(function () {
   $('#intro-form').submit(function () {
     event.preventDefault();
     let inputName = $('#name-input').val();
-    let player = new Musician(inputName, 50, 4, 5, [], {});
-    let bestie = new Musician("Shaggi", 50, 3, 5, [], shaggiLines, shaggiBattleLines);
+    let player = new Musician(inputName, 8, 4, 5, [], {});
+    let bestie = new Musician("Shaggi", 4, 3, 5, [], shaggiLines, shaggiBattleLines);
     let grrrrl = new Musician("Astra", 6, 5, 6, [], metalLines, metalBattleLines);
     let steve = new Musician("Steve", 8, 8, 7, [], countryLines, countryBattleLines);
     let genesis = new Musician("Genesis", 10, 8, 8, [], kpopLines, kpopBattleLines);
