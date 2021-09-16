@@ -172,12 +172,12 @@ $(document).ready(function () {
   $('#intro-form').submit(function () {
     event.preventDefault();
     let inputName = $('#name-input').val();
-    let player = new Musician(inputName, 1000, 3, 5, 1, 1, [], {});
-    let bestie = new Musician("Shaggi", 5, 3, 5, 1, 100, [], shaggiLines, shaggiBattleLines);
-    let grrrrl = new Musician("Astra", 1, 1, 1, 1, 1, [], metalLines, metalBattleLines);
-    let steve = new Musician("Steve", 1, 1, 1, 1, 1, [], countryLines, countryBattleLines);
-    let genesis = new Musician("Genesis", 1, 1, 1, 1, 1, [], kpopLines, kpopBattleLines);
-    let end = new Musician("end", 1, 1, 1, 1, 1, [], endLines);
+    let player = new Musician(inputName, 1000, 3, 5, 1, [], {});
+    let bestie = new Musician("Shaggi", 5, 3, 5, 1, [], shaggiLines, shaggiBattleLines);
+    let grrrrl = new Musician("Astra", 1, 1, 1, 1, [], metalLines, metalBattleLines);
+    let steve = new Musician("Steve", 1, 1, 1, 1, [], countryLines, countryBattleLines);
+    let genesis = new Musician("Genesis", 1, 1, 1, 1, [], kpopLines, kpopBattleLines);
+    let end = new Musician("end", 1, 1, 1, 1, [], endLines);
     let garageBattle = new Battle(player, bestie, 1);
     let metalBattle = new Battle(player, grrrrl, 2);
     let countryBattle = new Battle(player, steve, 3);

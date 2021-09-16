@@ -30,7 +30,6 @@ export default class Battle {
 
   winBattleCheck() {
     if (this.player.hype >= 100) {
-      this.player.money += this.enemy.money;
       this.player.hype = 0;
       this.won = true;
     } else if (this.enemy.hype >= 100) {

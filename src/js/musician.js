@@ -1,11 +1,10 @@
 export default class Musician {
-  constructor(name, atk, def, style, fame, money, bandmates, dialog, battlequote) {
+  constructor(name, atk, def, style, fame, bandmates, dialog, battlequote) {
     this.name = name;
     this.atk = atk;
     this.def = def;
     this.style = style;
     this.fame = fame;
-    this.money = money;
     this.bandmates = bandmates;
     this.hypeIncrease = 0;
     this.hype = 0;
