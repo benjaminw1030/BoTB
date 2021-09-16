@@ -26,7 +26,7 @@ User names their band and hits the stage! In each level, the user will face off 
 4. Type "npm install" in the terminal.
 5. Type "npm run start" to output an index.html file in the "dist" directory and bring up the distribution build in a Chrome web browser.
 6. You can also open a development server by typing "npm run start".
-
+See it on [GitHub Pages](https://github.com/benjaminw1030/battle-of-the-bands/)
 
 ## Known Bugs
 
