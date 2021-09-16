@@ -70,7 +70,7 @@ export default class Musician {
   bandmate(bandmate, enemy) {
     let bandmateHype;
     switch (bandmate) {
-      case "Shaggy":
+      case "Shaggi":
         bandmateHype = 10;
         break;
       case "Astra":

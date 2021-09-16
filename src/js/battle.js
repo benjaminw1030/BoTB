@@ -15,6 +15,9 @@ export default class Battle {
   // let battle1 = new Battle(garageKid, player)
   // pseudo-code
   nextTurn() {
+    if (this.id === 5){
+      return false;
+    }
     if (this.musicianTurn === 0 && this.enemy.focusMod === 2) {
       this.enemy.focusMod = 1;
     } else if (this.musicianTurn === 1 && this.player.focusMod === 2) {

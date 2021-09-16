@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import Musician from './js/musician';
 import Battle from './js/battle';
-import { shaggyLines, metalLines, countryLines, kpopLines } from './js/dialog';
+import { shaggiLines, metalLines, countryLines, kpopLines, endLines } from './js/dialog';
 // import Inventory from './js/inventory';
 
 $(".audio").prop("volume", 0.2);
@@ -80,6 +80,24 @@ function increaseEnemyBar(enemy) {
     .text(enemy.hype + "% Complete");
 }
 
+function displayCurrentEnemy(enemy) {
+  $('.enemy').hide();
+  switch (enemy.name) {
+    case 'Shaggi':
+      $('.shaggi').show();
+      break;
+    case 'Astra':
+      $('.astra').show();
+      break;
+    case 'Steve':
+      $('.steve').show();
+      break;
+    case 'Genesis':
+      $('.genesis').show();
+      break;
+  }
+}
+
 function enemyActionOutput(enemy) {
   switch (enemy.lastAction) {
     case 'chorus':
@@ -103,16 +121,21 @@ function enemyActionOutput(enemy) {
 
 function battleStatus(player, enemy, battleIndex, battles) {
   if (battles[battleIndex].won === true) {
-    //display a win page/statement
-    $('#battle-phase').hide();
-    $('#phase3').show();
+    $('.battle-phase').hide();
+    $('.prep-phase').show();
     player.bandmates.push(enemy.name);
     player.hype = 0;
     increasePlayerBar(player);
     increaseEnemyBar(enemy);
-  } else if (battles[battleIndex].won === true && battleIndex === 4) {
-    $('#victory-screen').show();
+  // } else if (battles[battleIndex].won === true && battleIndex === 4) {
+  //   $('.prep-phase').hide();
+  //   $('.battle-phase').hide();
+  //   $('.start-phase').hide();
+  //   $('#victory-screen').show();
   } else if (battles[battleIndex].lost === true) {
+    $('.prep-phase').hide();
+    $('.battle-phase').hide();
+    $('.start-phase').hide();
     $('#game-over').show();
   }
 }
@@ -120,38 +143,52 @@ function battleStatus(player, enemy, battleIndex, battles) {
 function getDialogue(enemy, line) {
   let dialog = enemy.dialog.get(line);
   $(`#dialogue-output`).text(`${dialog}`);
-  if (enemy.dialog.size === line) {
+  if (enemy.dialog.size === line && enemy.name === "end") {
+    $('.prep-phase').hide();
+    $('#victory-screen').show();
+  }
+  else if (enemy.dialog.size === line) {
     $('#next-btn').hide();
     $('#skip-btn').hide();
     $('#lets-jam-btn').show();
   }
 }
 
+function resetButtons() {
+  $('#next-btn').show();
+  $('#skip-btn').show();
+  $('#lets-jam-btn').hide();
+  $('#player-turn-btn').hide();
+  $('#enemy-turn-btn').hide();
+  $('#confirm-btn').show();
+}
+
 $(document).ready(function () {
   $('#intro-form').submit(function () {
     event.preventDefault();
-    let inputName = $('#name').val();
+    let inputName = $('#name-input').val();
     let player = new Musician(inputName, 1000, 3, 5, 1, 1, [], {});
-    let bestie = new Musician("Shaggi", 5, 3, 5, 1, 100, [], shaggyLines);
+    let bestie = new Musician("Shaggi", 5, 3, 5, 1, 100, [], shaggiLines);
     let grrrrl = new Musician("Astra", 1, 1, 1, 1, 1, [], metalLines);
     let steve = new Musician("Steve", 1, 1, 1, 1, 1, [], countryLines);
-    let genesis = new Musician("1GI-Genesis", 1, 1, 1, 1, 1, [], kpopLines);
+    let genesis = new Musician("Genesis", 1, 1, 1, 1, 1, [], kpopLines);
+    let end = new Musician("end", 1, 1, 1, 1, 1, [], endLines);
     let garageBattle = new Battle(player, bestie, 1);
     let metalBattle = new Battle(player, grrrrl, 2);
     let countryBattle = new Battle(player, steve, 3);
     let kpopBattle = new Battle(player, genesis, 4);
-    let battles = [garageBattle, metalBattle, countryBattle, kpopBattle];
+    let final = new Battle(player, end, 5)
+    let battles = [garageBattle, metalBattle, countryBattle, kpopBattle, final];
     let battleIndex = 0;
     let currentEnemy = battles[battleIndex].enemy;
     let line = 1;
     $('.start-phase').hide();
-    $('.battle-phase').show();
+    $('.prep-phase').show();
     $('.player-name').text(player.name);
     $('.enemy-name').text(currentEnemy.name);
-    $('#Shaggi-poster').show();
-    $('#boss-pic1').show();
-    $(`${currentEnemy.name}-poster`).show();
+    displayCurrentEnemy(currentEnemy);
     getDialogue(currentEnemy, line);
+    line++;
 
     $('#chorus-btn').click(function () {
       $('#attack-description').text('Sing the chorus and gain some hype!');
@@ -174,27 +211,32 @@ $(document).ready(function () {
     });
 
     $('#enemy-turn-btn').click(function () {
+      battles[battleIndex].nextTurn();
       battleStatus(player, currentEnemy, battleIndex, battles);
       if (battles[battleIndex].won === true) {
         battleIndex++;
         currentEnemy = battles[battleIndex].enemy;
+        resetButtons();
+        $('.enemy-name').text(currentEnemy.name);
+        getDialogue(currentEnemy, line);
+        line++;
+        displayCurrentEnemy(currentEnemy);
+      } else {
+        currentEnemy.bossAction(player);
+        enemyActionOutput(currentEnemy);
+        increaseEnemyBar(currentEnemy);
+        $('#enemy-turn-btn').hide();
+        $('#player-turn-btn').show();
       }
-      battles[battleIndex].nextTurn();
-      currentEnemy.bossAction(player);
-      enemyActionOutput(currentEnemy);
-      increaseEnemyBar(currentEnemy);
-      $('#enemy-turn-btn').hide();
-      $('#player-turn-btn').show();
-      console.log("battle index is " + battleIndex);
     });
 
     $('#player-turn-btn').click(function () {
+      battles[battleIndex].nextTurn();
       battleStatus(player, currentEnemy, battleIndex, battles);
-      if (battles[battleIndex].won === true) {
+      if (battles[battleIndex].lost === true) {
         battleIndex++;
         currentEnemy = battles[battleIndex].enemy;
       }
-      battles[battleIndex].nextTurn();
       $('#player-turn-btn').hide();
       $('#confirm-btn').show();
     });
@@ -210,8 +252,8 @@ $(document).ready(function () {
 
     $('.battle-ready').click(function () {
       line = 1;
-      $("#prep-phase").hide();
-      $("#battle-phase").show();
+      $(".prep-phase").hide();
+      $(".battle-phase").show();
     });
   });
 });
