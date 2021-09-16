@@ -172,7 +172,7 @@ figcaption {
   color: black;
 }
 
-#enemy-turn-btn {
+#confirm-btn, #player-turn-btn {
   position: relative;
   right: 30%;
 }

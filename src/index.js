@@ -96,6 +96,11 @@ function assignConfirm(button, player, enemy, bandmate) {
     $('#enemy-turn-btn').show();
     $('#confirm-btn').hide();
     $('#confirm-btn').unbind();
+    $(`#chorus-btn`).prop('disabled', true);
+    $(`#focus-btn`).prop('disabled', true);
+    $(`#flourish-btn`).prop('disabled', true);
+    $(`#solo-btn`).prop('disabled', true);
+    $(`#band-btn`).prop('disabled', true);
   });
 }
 
@@ -248,6 +253,11 @@ function resetButtons() {
   $(`#Shaggi-btn`).prop('disabled', false);
   $(`#Astra-btn`).prop('disabled', false);
   $(`#Steve-btn`).prop('disabled', false);
+  $(`#chorus-btn`).prop('disabled', false);
+  $(`#focus-btn`).prop('disabled', false);
+  $(`#flourish-btn`).prop('disabled', false);
+  $(`#solo-btn`).prop('disabled', false);
+  $(`#band-btn`).prop('disabled', false);
   $('#next-btn').show();
   $('#skip-btn').show();
   $('#lets-jam-btn').hide();
@@ -333,6 +343,11 @@ $(document).ready(function () {
         battleIndex++;
         currentEnemy = battles[battleIndex].enemy;
       }
+      $(`#chorus-btn`).prop('disabled', false);
+      $(`#focus-btn`).prop('disabled', false);
+      $(`#flourish-btn`).prop('disabled', false);
+      $(`#solo-btn`).prop('disabled', false);
+      $(`#band-btn`).prop('disabled', false);
       $('#player-turn-btn').hide();
       $('#confirm-btn').show();
     });
