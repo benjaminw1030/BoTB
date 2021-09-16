@@ -6,17 +6,28 @@ Section 4 - Buttons & Styling (158-222)
 Section 5 - Pics (222 - End)
 */
 
+.coversheet {
+  display: none;
+}
+
+#shaggi-song, #astra-song, #steve-song, #genesis-song {
+  position: relative;
+}
 
 audio {
   display: block;
   margin: 0 auto;
 }
 
+.enemy {
+  display: none;
+}
 
 body {
   background-color: #0B0C10;
   color: #C5C6C7;
 }
+
 
 figcaption {
   margin: 0px auto 0px auto;
@@ -177,6 +188,25 @@ figcaption {
   gap: 15px;
 }
 
+#attack-dialogue{
+  position: relative;
+  border-style: solid;
+  border-width: 5px;
+  background-color: white;
+  width: 450px;
+  height: 175px;
+  margin-top:5px;
+  margin-bottom:10px;
+}
+
+#dialogue-text{
+  position:relative;
+  top: 5px;
+  font: italic small-caps 950 16px/2 cursive;
+  color:black;
+  text-align: center;
+}
+
 
 /* SECTION 4 This is where the CSS for buttons lives */
 .btn-start {
@@ -251,23 +281,10 @@ figcaption {
   text-align: center;
 }
 
-#attack-dialogue{
-  position: relative;
-  border-style: solid;
-  border-width: 5px;
-  background-color: white;
-  width: 450px;
-  height: 100px;
-  margin-top:5px;
-  margin-bottom:20px;
-}
 
-#dialogue-text{
-  position:relative;
-  top: 5px;
-  font: italic small-caps 950 16px/2 cursive;
-  color:black;
-  text-align: center;
+
+#bandmates {
+  margin-right: 10px;
 }
 
 #button-box {

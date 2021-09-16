@@ -48,6 +48,23 @@ export default class Musician {
     this.lastAction = 'flourish';
   }
 
+  bandmate(bandmate) {
+    let bandmateHype;
+    switch (bandmate) {
+      case "Shaggi":
+        bandmateHype = 10;
+        break;
+      case "Astra":
+        bandmateHype = 15;
+        break;
+      case "Steve":
+        bandmateHype = 20;
+        break;
+    }
+    this.hypeIncrease = bandmateHype;
+    this.hype += this.hypeIncrease;
+  }
+
   getQuote() {
     return this.battlequote[Math.floor(Math.random() * this.battlequote.length)];
   }
@@ -82,19 +99,4 @@ export default class Musician {
     }
   }
 
-  bandmate(bandmate, enemy) {
-    let bandmateHype;
-    switch (bandmate) {
-      case "Shaggi":
-        bandmateHype = 10;
-        break;
-      case "Astra":
-        bandmateHype = 15;
-        break;
-      case "Steve":
-        bandmateHype = 20;
-        break;
-    }
-    this.hypeIncrease = bandmateHype - (enemy.def * enemy.focusMod);
-  }
 }

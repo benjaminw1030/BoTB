@@ -6,8 +6,8 @@ const shaggiLines = new Map(
     [1, 'The day began like any other day: with one crucial difference. You are going to become a rock star (well…pop star. Genre isn’t important. You wanted to sell out anyway). To become a star you need an audience. And you know just the guy to vet your stuff. TO YOUR BEST FRIEND’S GARAGE!'],
     [2, 'SHAGGI: “Yo what up doobs? You’re here early, it ain’t even 4:00 and you’re scratching at my door.”'],
     [3, '*You tell Shaggi about your destiny*'],
-    [4, 'SHAGGI: “Haha really? You think you got what it takes to be a star? Well I’ve heard you play man and I guess you’re pretty talented. Why don’t you play for me now? If you rock my socks off I might even be tempted to join you.'],
-    [5, '*You take a second to channel the spirit of your musical ancestors. Here we go! (click -Let’s Jam- to proceed!)']
+    [4, 'SHAGGI: “Haha really? You think you got what it takes to be a star? Well I’ve heard you play man and I guess you’re pretty talented. Why don’t you play against me now? If you rock my socks off I might even be tempted to join you.'],
+    [5, '*You take a second to channel the spirit of your musical ancestors. Here we go! (click -Let’s Jam- to challenge Shaggi to a battle!)']
   ]
 );
 
@@ -17,7 +17,7 @@ const shaggiBattleLines =
     "Yawn….I mean that’s a little stale…",
     "WOAH! Sick Riff!",
     "That’s actually pretty good!",
-    "If that's as good as it gets I'm gonna go watch TV.",
+    "If that's as good as you get I'm gonna go watch TV.",
     "Haven't heard that before!",
     "Alright! Alright! Here we go!",
     "ROCK ON BROTHER!"
@@ -26,7 +26,7 @@ const shaggiBattleLines =
 
 const metalLines = new Map(
   [
-    [1, "*You feel a sense of exhilaration. Life has meaning!*"],
+    [1, "*Shaggi looks excited, despite getting crushed. You feel a sense of exhilaration. Life has meaning!*"],
     [2, "SHAGGI: This might be my extracurriculars talking, but I think you have that star quality! And I’m just relatable enough to balance that “leading man” energy! You alright turning this solo into a duo?"],
     [3, "*You would never turn down a friend. You excitedly shake Shaggi’s hand*"],
     [4, "SHAGGI: Let’s GO dude! And I know the perfect place to start. There’s an open mic battle of the bands later this evening! I hear they got that local up and coming group – that one metal band? I’m sure there’s some record label skeez bag scoping them out tonight, let’s go show them the power of our tenacious duet!"],
@@ -155,4 +155,4 @@ const endLines = new Map(
 );
 
 
-// "*all speaking at once*" + "\n" + "Impossible" + "\n" + 'No way!' + "\n" +  'You...had such power?!' + "\n" +  'I want to be a chef - I hate this!' + "\n" +  'Genesis is Genefinished...'
+

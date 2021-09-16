@@ -8,6 +8,7 @@
 
 <body>
   <!-- intro begin -->
+  <div class ="coversheet"><img src="assets/images/loading-image.png" alt="loading screen"></div>
   <div class="bg-intro-pic start-phase"></div>
   <div class="container start-phase" id="intro">
     <div class="bg-intro-pic start-phase"></div>
@@ -18,6 +19,53 @@
           <button class="btn-start hover2 " button type="submit"><span id="start-btn-text">Begin Your Music
               Journey</span></button>
     </form>
+  </div>
+  <div class="audio-screen">
+    <div id="audio-box">
+      <div class="enemy shaggi" id="shaggi-song">
+        <figure>
+          <figcaption>Shaggi Theme Song:</figcaption>
+          <audio loop class="garage-theme audio"
+            src="http://docs.google.com/uc?export=open&id=16MVnpceRwKaZ7_Vd0ENQVrXROVX1iCOu" controls
+            type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+        </figure>
+      </div>
+
+      <div class="enemy astra" id="astra-song">
+        <figure>
+          <figcaption>Astral Forest Theme Song:</figcaption>
+          <audio loop class="metal-theme audio"
+            src="http://docs.google.com/uc?export=open&id=1BOvUgz-4JT_L10RuTWXzei6FVTiQ1A3F" controls
+            type="audio/wav">
+            Your browser does not support the audio element.
+          </audio>
+        </figure>
+      </div>
+
+      <div class="enemy steve" id="steve-song">
+        <figure>
+          <figcaption>Steve Madison Theme Song:</figcaption>
+          <audio loop class="country-theme audio"
+            src="http://docs.google.com/uc?export=open&id=125xZmtQEkX0qmr7oLc3g-rzajaP3Z0wm" controls
+            type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+        </figure>
+      </div>
+
+      <div class="enemy genesis" id="genesis-song">
+        <figure>
+          <figcaption>1GI Genesis Theme Song:</figcaption>
+          <audio loop class="kpop-theme audio"
+            src="http://docs.google.com/uc?export=open&id=1qRZ9AAdxXFCmrGPsR-tPr0a_Yufc9_DU" controls
+            type="audio/wav">
+            Your browser does not support the audio element.
+          </audio>
+        </figure>
+      </div>
+    </div>
   </div>
   <!-- intro end -->
   <!-- <prep UI> -->
@@ -56,6 +104,9 @@
         <div id="Genesis-poster">
           <img class="prep-pic enemy genesis" src="assets/images/Electro House Concert Flyer.jpg" alt="Kpop concert poster">
         </div>
+        <div id="End-poster">
+          <img class="prep-pic enemy end" src="assets/images/you-win.jpg" alt="Winning stage">
+        </div>
       </div>
     </div>
   </div>
@@ -66,51 +117,6 @@
       <div class="enemy astra" id="metal-bkground"></div>
       <div class="enemy steve" id="country-bkground"></div>
       <div class="enemy genesis" id="kpop-bkground"></div>
-      <div class="audio-screen">
-        <div id="audio-box">
-          <div class="enemy shaggi">
-            <figure>
-              <figcaption>Shaggi Theme Song:</figcaption>
-              <audio loop class="garage-theme audio"
-                src="http://docs.google.com/uc?export=open&id=16MVnpceRwKaZ7_Vd0ENQVrXROVX1iCOu" controls
-                type="audio/mpeg">
-                Your browser does not support the audio element.
-              </audio>
-            </figure>
-          </div>
-          <div class="enemy astra">
-            <figure>
-              <figcaption>Astral Forest Theme Song:</figcaption>
-              <audio loop class="metal-theme audio"
-                src="http://docs.google.com/uc?export=open&id=1BOvUgz-4JT_L10RuTWXzei6FVTiQ1A3F" controls
-                type="audio/wav">
-                Your browser does not support the audio element.
-              </audio>
-            </figure>
-          </div>
-
-          <div class="enemy steve">
-            <figure>
-              <figcaption>Steve Madison Theme Song:</figcaption>
-              <audio loop class="country-theme audio"
-                src="http://docs.google.com/uc?export=open&id=125xZmtQEkX0qmr7oLc3g-rzajaP3Z0wm" controls
-                type="audio/mpeg">
-                Your browser does not support the audio element.
-              </audio>
-            </figure>
-          </div>
-          <div class="enemy genesis">
-            <figure>
-              <figcaption>1GI Genesis Theme Song:</figcaption>
-              <audio loop class="kpop-theme audio"
-                src="http://docs.google.com/uc?export=open&id=1qRZ9AAdxXFCmrGPsR-tPr0a_Yufc9_DU" controls
-                type="audio/wav">
-                Your browser does not support the audio element.
-              </audio>
-            </figure>
-          </div>
-        </div>
-      </div>
 
       <div class="battle-screen battle-phase container">
         <div id="banner-box">
@@ -140,6 +146,9 @@
               <button class="btn-danger hover spacing" id="chorus-btn" type="click">CHORUS</button>
               <button class="btn-primary hover spacing" id="focus-btn" type="click">FOCUS</button>
               <button class="btn-success hover spacing" id="solo-btn" type="click">SOLO</button>
+              <button class="btn-submit hover bandmates" id="Shaggi-btn" type="click">SHAGGI</button>
+              <button class="btn-submit hover bandmates" id="Astra-btn" type="click">ASTRA</button>
+              <button class="btn-submit hover bandmates" id="Steve-btn" type="click">STEVE</button>
             </div>
             <div id="row2">
               <button class="btn-warning hover spacing" id="flourish-btn" type="click">FLOURISH</button>
@@ -152,11 +161,6 @@
               <button class="btn-submit hover" id="confirm-btn" type="click">CONFIRM</button>
               <button class="btn-submit hover" id="player-turn-btn" type="click">PLAYER TURN</button>
               <button class="btn-submit hover" id="enemy-turn-btn" type="click">ENEMY TURN</button>
-            </div>
-            <div id="row4">
-              <button class="btn-submit hover bandmates" id="Shaggi-btn" type="click">SHAGGI</button>
-              <button class="btn-submit hover bandmates" id="Astra-btn" type="click">ASTRA</button>
-              <button class="btn-submit hover bandmates" id="Steve-btn" type="click">STEVE</button>
             </div>
           </div>
         </div>
@@ -174,17 +178,26 @@
 
   <div id="victory-screen">
     <img class="center-pic" src="assets/images/victory-page.gif" alt="Victory gif poster">
-    <figcaption>Sweet, Sweet, Sweet Victory!</figcaption>
-    <audio loop class="victory-theme audio audio-center"
-      src="http://docs.google.com/uc?export=open&id=1Qh1969S-HdGJVgKzccKECfWa3b9pFneQ" controls type="audio/wav">
-      Your browser does not support the audio element.
-    </audio>
+    <figure>
+      <figcaption>Sweet, Sweet, Sweet Victory!</figcaption>
+      <audio loop class="victory-theme audio"
+        src="http://docs.google.com/uc?export=open&id=1Qh1969S-HdGJVgKzccKECfWa3b9pFneQ" controls type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
     </figure>
     <button type="click" class="btn-primary hover game-over-btn">TOUR AGAIN</button>
   </div>
 
   <div id="game-over">
     <img class="center-pic" src="assets/images/gameover.jpg" alt="Game over">
+    <figure>
+      <figcaption>Game Over:</figcaption>
+      <audio class="gameOver-theme audio"
+        src="http://docs.google.com/uc?export=open&id=1zGQFy9I_sOuFlb7Lkkm1x5l4-3qc_uIq" controls
+        type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </figure>
     <button type="click" class="btn-primary hover game-over-btn">TRY AGAIN</button>
   </div>
 </body>
