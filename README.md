@@ -1,4 +1,4 @@
-# Battle of the Bands
+ # Battle of the Bands
 
 #### An RPG game where user starts a band and beats other bands in musical combat.
 
@@ -30,19 +30,19 @@ User names their band and hits the stage! In each level, the user will face off 
 
 ## Known Bugs
 
-* _Any known issues_
-* _should go here_
+* Name input does not have a character restriction and may cause issues if too many are entered. 
+* Audio may not always play automatically.
 
 ## License
 
 * [MIT License](https://opensource.org/licenses/MIT)
 
-Copyright (c) 2021 Benjamin Wilson
+Copyright (c) 2021 Benjamin Wilson, Anna Clarke, Brandon Eads, Becket Harvey, Kody Green
 
 ## Contact Information
 
 Anna Clarke: <anclarkie@gmail.com>
 Benjamin Wilson: <benjaminw1030@gmail.com>
-Brandon Eads:
-Becket Harvey: My repo at Sunshinepunch.github!
-Kody Green:
+Brandon Eads: <brandon181989@hotmail.com>
+Becket Harvey: <www.linkedin.com/in/becket-harvey-sunshine>
+Kody Green: <gordon.km89@gmail.com>
