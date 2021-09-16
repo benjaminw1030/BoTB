@@ -2,7 +2,7 @@
 
 #### An RPG game where user starts a band and beats other bands in musical combat.
 
-#### By Benjamin Wilson, Beckett Harvey, Brandon Eads, Anna Clarke, Kody Gordon
+#### By Benjamin Wilson, Becket Harvey, Brandon Eads, Anna Clarke, Kody Gordon
 
 ## Technologies Used
 
