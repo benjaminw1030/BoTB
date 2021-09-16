@@ -1,65 +1,56 @@
 export default class Musician {
-  constructor(name, atk, def, style, fame, money, inv, bandmates, pc) {
+  constructor(name, atk, def, style, fame, money, bandmates, dialog) {
     this.name = name;
     this.atk = atk;
     this.def = def;
     this.style = style;
     this.fame = fame;
-    this.inv = inv;
     this.money = money;
     this.bandmates = bandmates;
-    //player = boolean for true/false
-    this.pc = pc;
+    this.hypeIncrease = 0;
     this.hype = 0;
     this.focusMod = 1;
     this.soloMod = 1;
+    this.lastAction = '';
+    this.dialog = dialog;
   }
-  //play chorus = attack
-  // flourish move ?
-  // potentially for UI, check battle.musicianTurn to determine div to show
-  //
+
   attack(enemy) {
-    let hypeIncrease = (this.atk * this.soloMod) - (enemy.def * enemy.focusMod)
-    if (hypeIncrease <= 0) {
-      this.hype += 1;
-    } else {
-      this.hype += (hypeIncrease);
+    this.hypeIncrease = (this.atk * this.soloMod) - (enemy.def * enemy.focusMod);
+    if (this.hypeIncrease <= 0) {
+      this.hypeIncrease = 1;
     }
-    this.soloMod = 1;
+    this.hype += this.hypeIncrease;
+    this.lastAction = 'chorus';
   }
+
 
   focus() {
     this.focusMod = 2;
-    return `${this.name} is focusing`;
+    this.lastAction = 'focus';
   }
 
   solo() {
     this.soloMod = 2;
-    return `${this.name} is charging`;
+    this.lastAction = 'solo';
   }
 
   flourish(enemy) {
-    let successChance = Math.floor(Math.random(1, 20));
+    let successChance = Math.ceil(Math.random() * 20);
     successChance += this.style;
     if (successChance > 10) {
-      let hypeIncrease = (this.atk * this.soloMod + this.style) - (enemy.def * enemy.focusMod)
-      if (hypeIncrease <= 0) {
-        this.hype += 1;
-      } else {
-        this.hype += (hypeIncrease);
-      }
-    } else {
-      this.hype += 1;
+      this.hypeIncrease = (this.atk * this.soloMod + this.style) - (enemy.def * enemy.focusMod);
     }
+    if (this.hypeIncrease <= 0) {
+      this.hypeIncrease = 1;
+    }
+    this.hype += this.hypeIncrease;
     this.soloMod = 1;
+    this.lastAction = 'flourish';
   }
 
-  // if battle.musicianTurn = 1 {
-    //this.message()
-    //return statement in text box
-    // array with 4 statements in it - print 
   bossAction(player) {
-    let bossTime = Math.floor(Math.random(1, 4));
+    let bossTime = Math.ceil(Math.random() * 4);
     switch (bossTime) {
       case 1:
         this.attack(player);
@@ -76,5 +67,20 @@ export default class Musician {
     }
   }
 
+  bandmate(bandmate, enemy) {
+    let bandmateHype;
+    switch (bandmate) {
+      case "Shaggi":
+        bandmateHype = 10;
+        break;
+      case "Astra":
+        bandmateHype = 15;
+        break;
+      case "Steve":
+        bandmateHype = 20;
+        break;
+    }
+    this.hype += this.hypeIncrease;
+    this.hypeIncrease = bandmateHype - (enemy.def * enemy.focusMod);
+  }
 }
-

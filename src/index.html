@@ -7,94 +7,174 @@
 </head>
 
 <body>
-<!-- intro begin -->
-  <div class="bg-intro-pic phase1"></div>
-    <div class="container phase1" id="intro">
-      <div class="bg-intro-pic phase1"></div>
-        <form id="intro-form">
-          <h3><label for="name-input" id="name-input-label">Please Enter Your Band Name</label><h3>
+  <!-- intro begin -->
+  <div class="bg-intro-pic start-phase"></div>
+  <div class="container start-phase" id="intro">
+    <div class="bg-intro-pic start-phase"></div>
+    <form id="intro-form">
+      <h3><label for="name-input" id="name-input-label">Please Enter Your Band Name</label>
+        <h3>
           <input id="name-input" type="text">
-          <button class="btn-start hover "button type="submit"><span id="start-btn-text">Begin Your Music Journey</span></button>
-        </form>
+          <button class="btn-start hover " button type="submit"><span id="start-btn-text">Begin Your Music
+              Journey</span></button>
+    </form>
+  </div>
+  <!-- intro end -->
+  <!-- <prep UI> -->
+  <div class="prep-phase">
+    <div class="container main-row" id="prep-page">
+      <div class="container" id="column10">
+        <div id="prep-banner">
+          <h2>The Story So Far</h2>
+        </div>
+        <div id="dialogue-box">
+          <p id="dialogue-output">This box will display dialogue with your bandmates</p>
+        </div>
+        <div id="row2.0">
+          <button class="btn-submit hover spacing" id="next-btn" type="click">NEXT</button>
+          <button class="btn-submit hover spacing battle-ready" id="skip-btn" type="click">SKIP TEXT</button>
+          <button class="btn-submit hover spacing battle-ready" id="lets-jam-btn" type="click">LET'S JAM!</button>
+        </div>
+        <div id="row3.0">
+          <img class="boss-pic enemy shaggi" id="boss-pic1" src="assets/images/shaggy-boss.jpg" alt="image of your friend, Shaggi">
+          <img class="boss-pic enemy astra" id="boss-pic2" src="assets/images/metal-boss.jpg" alt="image of metal singer">
+          <img class="boss-pic enemy steve" id="boss-pic3" src="assets/images/country-boss.jpg" alt="image of country singer">
+        </div>
+      </div>
+      <div class="container" id="column20">
+        <h3>Upcoming Stage</h3>
+        <div id="Shaggi-poster">
+          <img class="prep-pic enemy shaggi" src="assets/images/garage.jpeg" alt="your garage">
+        </div>
+        <div id="Astra-poster">
+          <img class="prep-pic enemy astra" src="assets/images/Neon Skulls Music Concert Poster.gif" alt="Metal concert">
+        </div>
+        <div id="Steve-poster">
+          <img class="prep-pic enemy steve" src="assets/images/Yellow Guitarist Concert Program.jpg"
+            alt="Country Music Concert poster">
+        </div>
+        <div id="Genesis-poster">
+          <img class="prep-pic enemy genesis" src="assets/images/Electro House Concert Flyer.jpg" alt="Kpop concert poster">
+        </div>
+      </div>
     </div>
-<!-- intro end -->
+  </div>
+  <!--<prep UI end-->
+  <!-- <div class="battle-phase"> -->
+    <div class="container main-row battle-phase" id="battle-page">
+      <div class="enemy shaggi" id="garage-bkground"></div>
+      <div class="enemy astra" id="metal-bkground"></div>
+      <div class="enemy steve" id="country-bkground"></div>
+      <div class="enemy genesis" id="kpop-bkground"></div>
+      <div class="audio-screen">
+        <div id="audio-box">
+          <div class="enemy shaggi">
+            <figure>
+              <figcaption>Garage Dude Theme Song:</figcaption>
+              <audio loop class="garage-theme audio"
+                src="http://docs.google.com/uc?export=open&id=16MVnpceRwKaZ7_Vd0ENQVrXROVX1iCOu" controls
+                type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+            </figure>
+          </div>
+          <div class="enemy astra">
+            <figure>
+              <figcaption>Astral Forest Theme Song:</figcaption>
+              <audio loop class="metal-theme audio"
+                src="http://docs.google.com/uc?export=open&id=1BOvUgz-4JT_L10RuTWXzei6FVTiQ1A3F" controls
+                type="audio/wav">
+                Your browser does not support the audio element.
+              </audio>
+            </figure>
+          </div>
 
-  <div id="battle-screen" class="phase2 container">
-    <div id="banner-box">BATTLE OF THE BANDS:This is where your current battle will display </div>
-    <div class="row bars">
-      <div class="progress col-6" style="height: 20px;">
-        <div id="player-hype"class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
-          <span id="current-progress"></span></div>
+          <div class="enemy steve">
+            <figure>
+              <figcaption>Steve Madison Theme Song:</figcaption>
+              <audio loop class="country-theme audio"
+                src="http://docs.google.com/uc?export=open&id=125xZmtQEkX0qmr7oLc3g-rzajaP3Z0wm" controls
+                type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+            </figure>
+          </div>
+          <div class="enemy genesis">
+            <figure>
+              <figcaption>1GI Genesis Theme Song:</figcaption>
+              <audio loop class="kpop-theme audio"
+                src="http://docs.google.com/uc?export=open&id=1qRZ9AAdxXFCmrGPsR-tPr0a_Yufc9_DU" controls
+                type="audio/wav">
+                Your browser does not support the audio element.
+              </audio>
+            </figure>
+          </div>
+        </div>
+      </div>
+
+      <div class="battle-screen battle-phase container">
+        <div id="banner-box">
+          <h4>BATTLE OF THE BANDS: <span class="player-name"></span> VS <span class="enemy-name"></h4>
+        </div>
+        <p class="hype-label"><span class="player-name"></span>'s hype level</p>
+        <div class="row bars">
+          <div class="progress col-9" style="height: 20px;">
+            <div id="player-hype" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+              aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+              <span id="current-progress"></span>
+            </div>
+          </div>
+        </div>
+        <div id="button-box">
+          <div id="column1">
+            <div id="row1">
+              <button class="btn-danger hover spacing" id="chorus-btn" type="click">CHORUS</button>
+              <button class="btn-primary hover spacing" id="focus-btn" type="click">FOCUS</button>
+              <button class="btn-success hover spacing" id="solo-btn" type="click">SOLO</button>
+            </div>
+            <div id="row2">
+              <button class="btn-warning hover spacing" id="flourish-btn" type="click">FLOURISH</button>
+              <button class="btn-info hover spacing" id="band-btn" type="click">BANDMATE</button>
+            </div>
+            <div id="column3">
+              <div id="attack-description">This is a content box</div>
+            </div>
+            <div id="row3">
+              <button class="btn-submit hover" id="confirm-btn" type="click">CONFIRM</button>
+              <button class="btn-submit hover" id="player-turn-btn" type="click">PLAYER TURN</button>
+              <button class="btn-submit hover" id="enemy-turn-btn" type="click">ENEMY TURN</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="hype-label"><span class="enemy-name"></span>'s hype level: </p>
+      <div class="row bars2">
+        <div class="progress col-9" style="height: 20px;">
+          <div id="enemy-hype" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+            aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+            <span id="current-progress"></span>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div id="button-box">
-      <button class="btn-danger hover" id="chorus-btn" type="click">CHORUS</button>
-      <button class="btn-primary hover" id="focus-btn" type="click">FOCUS</button>
-      <button class="btn-success hover" id="solo-btn" type="click">SOLO</button>
-      <button class="btn-warning hover" id="flourish-btn" type="click">FLOURISH</button>
-      <br>
-      <br>
-      <button class="btn-submit hover" id="confirm-btn" type="click">Confirm Attack</button>
-    </div>
-    <div id="attack-description">This is a content box for battle messages</div>
-    
-    <br> 
 
-    <div class="row bars2">
-      <h5 id="enemy-name"></h5>
-      <div class="progress col-6" style="height: 20px;">
-        <div id="enemy-hype"class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
-          <span id="current-progress"></span></div>
-      </div>
-    </div>
-  </div>
-
-
-  <div id="main-prep" class="container phase3">
-    <div id="metal-prep">
-      <img class="center-pic" src="assets/images/Neon Skulls Music Concert Poster.gif" alt="Metal concert poster">
-    </div>
-    <div id="country-prep">
-      <img class="center-pic" src="assets/images/Yellow Guitarist Concert Program.jpg" alt="Country Music Concert poster">
-    </div>
-    <div id="kpop-prep">
-      <img class="center-pic" src="assets/images/Electro House Concert Flyer.jpg" alt="Kpop concert poster">
-    </div>
-    <button type="click" class="btn-primary hover" id="shop-btn">Shop</button>
-    <button type="click" class="btn-primary hover" id="practice-btn">Practice</button>
-    <button type="click" class="btn-danger hover" id="jam-btn">Ready to Jam!</button>
-  </div>
-
-  <div id="metal-level" class="phase3">
-    <figure>
-      <figcaption>Astral Forest Theme Song:</figcaption>
-      <audio loop class="metal-theme audio" src="http://docs.google.com/uc?export=open&id=1BOvUgz-4JT_L10RuTWXzei6FVTiQ1A3F" controls type="audio/wav">
-        Your browser does not support the audio element.
-      </audio>
+  <div id="victory-screen">
+    <img class="center-pic" src="assets/images/victory-page.gif" alt="Victory gif poster">
+    <figcaption>Sweet, Sweet, Sweet Victory!</figcaption>
+    <audio loop class="victory-theme audio audio-center"
+      src="http://docs.google.com/uc?export=open&id=1Qh1969S-HdGJVgKzccKECfWa3b9pFneQ" controls type="audio/wav">
+      Your browser does not support the audio element.
+    </audio>
     </figure>
+    <button type="click" class="btn-primary hover game-over-btn">TOUR AGAIN</button>
   </div>
 
-  <div id="country-level" class="phase3">
-    <figure>
-      <figcaption>Steve Madison Theme Song:</figcaption>
-      <audio loop class="country-theme audio" src="http://docs.google.com/uc?export=open&id=125xZmtQEkX0qmr7oLc3g-rzajaP3Z0wm" controls type="audio/wav">
-        Your browser does not support the audio element.
-      </audio>
-    </figure>
+  <div id="game-over">
+    <img class="center-pic" src="assets/images/gameover.jpg" alt="Game over">
+    <button type="click" class="btn-primary hover game-over-btn">TRY AGAIN</button>
   </div>
-  <div id="kpop-level" class="phase3">
-    <figure>
-      <figcaption>1GI Genesis Theme Song:</figcaption>
-      <audio loop class="kpop-theme audio" src="http://docs.google.com/uc?export=open&id=1qRZ9AAdxXFCmrGPsR-tPr0a_Yufc9_DU" controls type="audio/wav">
-        Your browser does not support the audio element.
-      </audio>
-    </figure>
-  </div>
-  <div id="winners-level">
-
-  </div>
-
 </body>
 
 </html>

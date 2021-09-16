@@ -1,82 +1,55 @@
+/*
+Section 1 - HTML/Audio Pieces, prep displays (1-29)
+Section 2 - Phases and Screens (38-76)
+Section 3 - Boxes/Containers and Battle/Prep UI elements (79-154)
+Section 4 - Buttons & Styling (158-222)
+Section 5 - Pics (222 - End)
+*/
+
+
+.audio-center {
+  display: block;
+  margin: 0 auto;
+}
+
+
 body {
   background-color: #0B0C10;
   color: #C5C6C7;
 }
 
-.jumbotron {
-  padding: 20px;
-  text-align: center;
-  background-color: #45A29E;
-  color: #66FCF1;
-  margin-top: 15px;
+.spacing {
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-bottom: 10px;
 }
 
-.btn-dark {
-  margin: auto;
-  margin-top: 10px;
-  width: 50%;
-  color: #C5C6C7;
-  background-color: #1F2833;
-  display: flex;
-  justify-content: center;
-}
+/* #Astra-music,
+#Steve-music,
+#Genesis-music {
+  display: none;
+} */
 
 
-.phase1 {
+
+/* SECTION 2 This is where the CSS for the phases and screens can be found: */
+
+/* .start-phase {
+  display: none;
+} */
+
+
+.prep-phase {
   display: none;
 }
 
-
-.phase2 {
-  display: show;
+.battle-phase {
+  display: none;
 }
 
-.phase3 {
-  display:none;
-}
-
-#battle-screen {
+.battle-screen {
   flex-flow: column wrap;
   justify-content: center;
-}
-
-#banner-box {
-  border: black;
-  background-image: linear-gradient(to right, red, yellow);
-  height: 100px;
-  justify-content: center;
-  
-}
-
-
-.bars {
-  position: relative;
-  top: 50%;
-  left: 25%;
-}
-
-.bars2 {
-  position: relative;
-  top: 40%;
-  left: 25%;
-}
-
-#attack-description{
-  position: relative;
-  left: 45%;
-  top: 25%;
-  margin-right: 55%;
-  border-style: solid;
-  border-width: 10px;
-  background-color: white;
-  width: 300px;
-  height: 300px;
-}
-
-#button-box {
-  position: relative;
-  top: 45%;
-  left: 25%;
 }
 
 #intro-form {
@@ -88,6 +61,96 @@ body {
   margin-left: -100px;
 }
 
+#battle-page {
+  display: none;
+}
+
+#victory-screen {
+  display: none;
+}
+
+#game-over {
+  display: none;
+}
+
+/* SECTION 3 this is where the CSS for containers/boxes and UI elements live */
+
+.main-row {
+  display: flex;
+  justify-content: space-between;
+  background-color: pink;
+}
+
+
+.hype-level {
+  padding: 10px;
+}
+
+.bars {
+  position: relative;
+  left: 10%;
+}
+
+.bars2 {
+  position: relative;
+  left: 10%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.hype-label {
+  margin-bottom: 2px;
+}
+
+#banner-box {
+  flex:column;
+  border: black;
+  font-size: 20px;
+  text-align: center;
+  padding: 40px 0 40px;
+  background-color: white;
+  height: 100px;
+  margin-bottom: 10px;
+}
+
+#column10 {
+  flex: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+#column20 {
+  flex: column;
+  justify-content: start;
+  margin-top: 10px;
+}
+
+#dialogue-box {
+  position: relative;
+  border-style: solid;
+  border-width: 5px;
+  background-color: white;
+  width: 500px;
+  height: 200px;
+  margin-top:10px;
+  margin-bottom:10px;
+  padding: 10px;
+}
+
+#prep-banner {
+  margin-top: 10px;
+  /* text-align: center; */
+
+}
+
+#row3 {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+
+/* SECTION 4 This is where the CSS for buttons lives */
 .btn-start {
   z-index: 2;
   position: fixed;
@@ -97,16 +160,10 @@ body {
   height: 60px;
 }
 
-#name-input {
- border-style: groove double;
-}
-
-#start-btn-text {
-  font-size:20px;
-}
-
-.hover {display: inline-block;
-  padding: 10px 15px;
+.hover {
+  margin-top: 15px;
+  margin-bottom:10px;
+  padding: 10px 5px;
   font-size: 14px;
   cursor: pointer;
   text-align: center;
@@ -127,6 +184,46 @@ body {
   transform: translateY(4px);
 }
 
+#attack-description{
+  position: relative;
+  border-style: solid;
+  border-width: 5px;
+  background-color: white;
+  width: 450px;
+  height: 100px;
+  margin-top:20px;
+  margin-bottom:10px;
+}
+
+#button-box {
+  position: relative;
+  left: 15%;
+  gap: 12px;
+}
+
+#name-input {
+  border-style: groove double;
+ }
+
+
+#start-btn-text {
+  font-size:20px;
+}
+
+
+#player-turn-btn,
+#enemy-turn-btn {
+  display: none;
+}
+
+/* SECTION 5 this is where the CSS for pictures lives */
+
+.boss-pic {
+  width: 150px;
+  height: auto;
+  margin: 5px;
+}
+
 .bg-intro-pic {
   opacity: .7;
   position: absolute;
@@ -139,7 +236,58 @@ body {
   background-size: contain;
   background-position: center;
   z-index: 1;
-  display: show;
+}
+#garage-bkground {
+  opacity: .7;
+  position: absolute;
+  height: 100%;
+  width: 80%;
+  background-attachment: fixed;
+  background-image: url(../assets/images/garage.jpeg);
+  object-fit: none;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  z-index: 0;
+}
+#metal-bkground {
+  opacity: .7;
+  position: absolute;
+  height: 100%;
+  width: 80%;
+  background-attachment: fixed;
+  background-image: url(../assets/images/metal2.jpg);
+  object-fit: none;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  z-index: 0;
+}
+#country-bkground {
+  opacity: .7;
+  position: absolute;
+  height: 100%;
+  width: 80%;
+  background-attachment: fixed;
+  background-image: url(../assets/images/country2.jpg);
+  object-fit: none;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  z-index: 0;
+}
+#kpop-bkground {
+  opacity: .7;
+  position: absolute;
+  height: 100%;
+  width: 80%;
+  background-attachment: fixed;
+  background-image: url(../assets/images/bts3.jpg);
+  object-fit: none;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  z-index: 0;
 }
 
 .center-pic {
@@ -149,14 +297,7 @@ body {
   width: 50%;
 }
 
-#metal-prep {
-  display: none;
-}
-
-#country-prep {
-  display: none;
-}
-
-#kpop-prep {
-  display: none
+.prep-pic {
+  width: 400px;
+  height: auto;
 }
