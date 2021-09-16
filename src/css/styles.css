@@ -6,16 +6,40 @@ Section 4 - Buttons & Styling (158-222)
 Section 5 - Pics (222 - End)
 */
 
+.coversheet {
+  display: none;
+}
 
-.audio-center {
+#shaggi-song, #astra-song, #steve-song, #genesis-song {
+  position: relative;
+}
+
+audio {
   display: block;
   margin: 0 auto;
 }
 
+.enemy {
+  display: none;
+}
 
 body {
   background-color: #0B0C10;
   color: #C5C6C7;
+}
+
+
+figcaption {
+  margin: 0px auto 0px auto;
+  text-align: center;
+  background-color: solid black;
+  font-family: 'Droid Sans Mono';
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+  padding: 10px 0;
+  width: fit-content;
+  position: relative;
 }
 
 .spacing {
@@ -31,6 +55,9 @@ body {
   display: none;
 } */
 
+#lets-jam-btn {
+  display: none;
+}
 
 .prep-phase {
   display: none;
@@ -145,6 +172,11 @@ body {
   color: black;
 }
 
+#enemy-turn-btn {
+  position: relative;
+  right: 30%;
+}
+
 #prep-banner {
   margin-top: 10px;
 
@@ -156,6 +188,25 @@ body {
   gap: 15px;
 }
 
+#attack-dialogue{
+  position: relative;
+  border-style: solid;
+  border-width: 5px;
+  background-color: white;
+  width: 450px;
+  height: 175px;
+  margin-top:5px;
+  margin-bottom:10px;
+}
+
+#dialogue-text{
+  position:relative;
+  top: 5px;
+  font: italic small-caps 950 16px/2 cursive;
+  color:black;
+  text-align: center;
+}
+
 
 /* SECTION 4 This is where the CSS for buttons lives */
 .btn-start {
@@ -165,6 +216,12 @@ body {
   left: 45%;
   width: 220px;
   height: 60px;
+}
+
+.game-over-btn {
+  left: 45%;
+  position: relative;
+  top: 80%;
 }
 
 .hover {
@@ -224,23 +281,10 @@ body {
   text-align: center;
 }
 
-#attack-dialogue{
-  position: relative;
-  border-style: solid;
-  border-width: 5px;
-  background-color: white;
-  width: 450px;
-  height: 100px;
-  margin-top:5px;
-  margin-bottom:20px;
-}
 
-#dialogue-text{
-  position:relative;
-  top: 5px;
-  font: italic small-caps 950 16px/2 cursive;
-  color:black;
-  text-align: center;
+
+#bandmates {
+  margin-right: 10px;
 }
 
 #button-box {
@@ -261,6 +305,20 @@ body {
 
 #player-turn-btn,
 #enemy-turn-btn {
+  display: none;
+}
+
+
+
+#Shaggi-btn {
+  display: none;
+}
+
+#Astra-btn {
+  display: none;
+}
+
+#Steve-btn {
   display: none;
 }
 
@@ -307,7 +365,7 @@ body {
   height: 100%;
   width: 80%;
   background-attachment: fixed;
-  background-image: url(../assets/images/metal2.jpg);
+  background-image: url(../assets/images/metal-boss-female.jpg);
   object-fit: none;
   background-repeat: no-repeat;
   background-size: contain;

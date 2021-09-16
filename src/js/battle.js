@@ -8,12 +8,7 @@ export default class Battle {
     this.won = false;
     this.lost = false;
   }
-  // let countryBattle = new Battle(player, enemy)
-  // take a breather = def
-  // let player = new musician(info from player form)
-  // let garageKid = new Musician(stats & stuff)
-  // let battle1 = new Battle(garageKid, player)
-  // pseudo-code
+
   nextTurn() {
     if (this.id === 5){
       return false;
